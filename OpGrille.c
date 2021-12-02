@@ -1,5 +1,25 @@
 #include "OpGrille.h"
 
+void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt) {
+    int size = width*height;
+    self->data = calloc(size, sizeof(struct Case));
+    for (int i = 0; i < size; i++)
+    {
+        self->data[i]->type = ' ';
+        self->data[i]->heuristique = calculate_heuristique(x, y, xt, yt);
+    }
+    self->width = width;
+    self->height = height;
+    self->tresorX = xt;
+    self->tresorY = yt;
+    self->sortieX = x;
+    self->sortieY = y;
+}
+
+
+
+
+
 char * array_to_line(int w, int h) {
     int size = w * h;
     char *line = calloc(size, sizeof(size_t));
@@ -10,7 +30,7 @@ char * array_to_line(int w, int h) {
     return line;
 }
 
-char * pos_and_char_to_line(int w, int h, int x, int y, char *status, char *line, int size) {
+char * pos_and_char_to_line(struct Board *self, int x, int y, char *status, char *line, int size) {
     int i = 0;
     if (x == h-1 || x == 0 || y == w-1 || y == 0){
         if (x == h-1)
@@ -23,7 +43,8 @@ char * pos_and_char_to_line(int w, int h, int x, int y, char *status, char *line
             }else if (y == w-1)
             {
                 line[(x-1)+(y-1)*w] = status[0];
-                line[(x-1)+(y)*w] = status[1];
+                line[(x-1)+(y)*w] = status[1]
+    int heuristique;;
                 line[(x)+(y-1)*w] = status[3];
             }else
             {
@@ -112,7 +133,6 @@ char * pos_and_char_to_line(int w, int h, int x, int y, char *status, char *line
 }
 
 // || x == h-1 && y == w-1 ||x == 0 && y == 0 || x == 0 && y == w-1 
-
 int calculate_heuristique(const int departX, const int departY, const int arriveX, const int arriveY){
     return abs(arriveX - departX) + abs(arriveY - departY);
 }
