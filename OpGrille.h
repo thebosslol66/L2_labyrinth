@@ -4,8 +4,14 @@
 #include <assert.h>
 #include <time.h>
 
-
-struct case {
+struct Case {
     int cout;
     int heuristique;
-}
+    char type; // ' ' = vide 
+};
+
+struct Board {
+    Case * data;
+    int width;
+    int height;
+};
