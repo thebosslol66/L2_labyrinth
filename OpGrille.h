@@ -4,6 +4,8 @@
 #include <assert.h>
 #include <time.h>
 
+#define int abs(int a){if(a<0){return -a;}return a;};
+
 struct Case {
     int cout;
     int heuristique;
@@ -11,7 +13,13 @@ struct Case {
 };
 
 struct Board {
-    Case * data;
+    Case * data; //Contain al information about plate
     int width;
     int height;
+
+    int tresorX;
+    int tresorY;
+
+    int sortieX;
+    int sortieY;
 };

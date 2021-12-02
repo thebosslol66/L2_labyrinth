@@ -112,3 +112,7 @@ char * pos_and_char_to_line(int w, int h, int x, int y, char *status, char *line
 }
 
 // || x == h-1 && y == w-1 ||x == 0 && y == 0 || x == 0 && y == w-1 
+
+int calculate_heuristique(const int departX, const int departY, const int arriveX, const int arriveY){
+    return abs(arriveX - departX) + abs(arriveY - departY);
+}
