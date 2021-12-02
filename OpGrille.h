@@ -4,7 +4,7 @@
 #include <assert.h>
 #include <time.h>
 
-#define int abs(int a){if(a<0){return -a;}return a;};
+#define abs(a)(a<0?-a:a)
 
 struct Case {
     int cout;
@@ -13,7 +13,7 @@ struct Case {
 };
 
 struct Board {
-    Case * data; //Contain al information about plate
+    struct Case * data; //Contain al information about plate
     int width;
     int height;
 

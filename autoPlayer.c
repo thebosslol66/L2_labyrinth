@@ -1,5 +1,7 @@
 #include "autoPlayer.h"
 
+#include "OpGrille.h"
+
 char * think(char * position){
     fprintf(stderr, "Read %s.", position);
     int * possible_direction;
@@ -41,6 +43,9 @@ char * think(char * position){
 int main() {
     srand(time(NULL));
     setbuf(stdout, NULL);
+
+    struct Board board;
+
     char buf[BUFSIZE];
     // get the width
     fgets(buf, BUFSIZE, stdin);
@@ -60,8 +65,13 @@ int main() {
     // get the treasure y
     fgets(buf, BUFSIZE, stdin);
     int yt = atoi(buf);
-    fprintf(stderr, "This will be put in error.log.\n");
+
+
+
     // initialize the state of the game
+    board_create(&board, width, height, x, y, xt, yt);
+
+
 
     fgets(buf, BUFSIZE, stderr);
     fprintf(stderr, "Flush : %s\n", buf);
