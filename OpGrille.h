@@ -14,12 +14,14 @@ struct Case {
     char type; // ' ' = vide 
 };
 
-struct File {
-    
+struct UnexploreCase {
+    int x;
+    int y;
+    struct UnexploreCase * next;
 };
 
 struct Board {
-    Case * data; //Contain al information about plate
+    struct Case * data; //Contain al information about plate
     int width;
     int height;
 
@@ -29,3 +31,5 @@ struct Board {
     int sortieX;
     int sortieY;
 };
+
+void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt);

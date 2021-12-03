@@ -37,7 +37,7 @@ char * think(char * position){
             returnValue--;
         }
     }
-
+    return "NORTH";
 }
 
 int main() {
