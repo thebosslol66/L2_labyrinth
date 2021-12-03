@@ -16,10 +16,6 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->sortieY = y;
 }
 
-
-
-
-
 char * array_to_line(int w, int h) {
     int size = w * h;
     char *line = calloc(size, sizeof(size_t));
@@ -44,7 +40,6 @@ char * pos_and_char_to_line(struct Board *self, int x, int y, char *status, char
             {
                 line[(x-1)+(y-1)*w] = status[0];
                 line[(x-1)+(y)*w] = status[1]
-    int heuristique;;
                 line[(x)+(y-1)*w] = status[3];
             }else
             {
@@ -134,5 +129,22 @@ char * pos_and_char_to_line(struct Board *self, int x, int y, char *status, char
 
 // || x == h-1 && y == w-1 ||x == 0 && y == 0 || x == 0 && y == w-1 
 int calculate_heuristique(const int departX, const int departY, const int arriveX, const int arriveY){
+    return abs(arriveX - departX) + abs(arriveY - departY);
+}
+
+int calculate_cout(const struct Board * board, const int x, const int y){
+    int minX = max(x-1, 0);
+    int maxX = min(x+1, board->width-1);
+    int minY = max(y-1, 0);
+    int maxY = min(x+1, board->height-1);
+
+    int coutActual = board->width*board->height;
+
+    for (int xt = minX; xt <= maxX; xt++){
+        for (int yt = minY; yt <= maxY; yt++){
+            coutActual = min(coutActual)
+        }
+    }
+
     return abs(arriveX - departX) + abs(arriveY - departY);
 }

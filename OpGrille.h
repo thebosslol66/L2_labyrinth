@@ -4,12 +4,18 @@
 #include <assert.h>
 #include <time.h>
 
-#define int abs(int a){if(a<0){return -a;}return a;};
+#define abs(a)(a<0?-a:a)
+#define max(a,b)(a>=b?a:b)
+#define min(a,b)(a<=b?a:b)
 
 struct Case {
     int cout;
     int heuristique;
     char type; // ' ' = vide 
+};
+
+struct File {
+    
 };
 
 struct Board {
