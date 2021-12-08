@@ -157,12 +157,19 @@ char * think(struct Board * self, int x, int y){
     board_print(self);
     int * possible_direction;
     possible_direction = calloc(4, sizeof(char));
-    possible_direction[0] = (get_type(self, x, y-1) != 'W')?1:0; //Haut
-    possible_direction[1] = (get_type(self, x-1, y) != 'W')?1:0; //Gauche
-    possible_direction[2] = (get_type(self, x+1, y) != 'W')?1:0; //Droite
-    possible_direction[3] = (get_type(self, x, y+1) != 'W')?1:0; //Bas
+    possible_direction[0] = (get_type(self, x, y-1) != 'W')?get_heuristique(self, x, y-1):-1; //Haut
+    possible_direction[1] = (get_type(self, x-1, y) != 'W')?get_heuristique(self, x-1, y):-1; //Gauche
+    possible_direction[2] = (get_type(self, x+1, y) != 'W')?get_heuristique(self, x+1, y):-1; //Droite
+    possible_direction[3] = (get_type(self, x, y+1) != 'W')?get_heuristique(self, x, y+1):-1; //Bas
 
-    
+    int index_min_heuristique = 0;
+    for (int i = 0; i < 4; i++){
+        if (possible_direction[i] >= 0){
+            if (possible_direction[i] < possible_direction[index_min_heuristique]){
+                index_min_heuristique = i;
+            }
+        }
+    }
 
 
 }
