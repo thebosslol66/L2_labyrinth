@@ -153,25 +153,71 @@ int calculate_cout(const struct Board * board, const int x, const int y){
     return coutActual;
 }
 
+struct Position * get_pos_with_index(int x){
+    switch(x){
+        case 0:{
+
+        }
+        case 1:{
+            
+        }
+        case 2:{
+            
+        }
+        case 3:{
+            
+        }
+        default:{
+
+        }
+    }
+}
 
 char * think(struct Board * self, int x, int y){
     raiseErrorIfOutOfBounds(self, x, y);
     board_print(self);
-    int * possible_direction;
+    struct Position * possible_direction
+
+    /* int * possible_direction;
     possible_direction = calloc(4, sizeof(char));
     possible_direction[0] = (get_type(self, x, y-1) != 'W')?get_heuristique(self, x, y-1):-1; //Haut
     possible_direction[1] = (get_type(self, x-1, y) != 'W')?get_heuristique(self, x-1, y):-1; //Gauche
     possible_direction[2] = (get_type(self, x+1, y) != 'W')?get_heuristique(self, x+1, y):-1; //Droite
-    possible_direction[3] = (get_type(self, x, y+1) != 'W')?get_heuristique(self, x, y+1):-1; //Bas
+    possible_direction[3] = (get_type(self, x, y+1) != 'W')?get_heuristique(self, x, y+1):-1; //Bas */
 
-    int index_min_heuristique = 0;
+    //insérer un nouveau chemin en fonction de son heuristique
+    int k = 0;
+    for (int i =-1; i <= 1; i++){
+        for (int j = i==0?-1:0; j <= 1; i+=2){
+            k++;
+            if (get_type(self, x, y-1) != 'W'){
+                int l = 0;
+                while (l < k && get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y) < get_heuristique(self, x+i, y+j)){
+                    l++;
+                }
+                for (int m = 3; l<= l; m--){
+                    possible_direction[m+1] = possible_direction[m];
+                }
+                possible_direction[l] = malloc(sizeof(struct Position));
+                possible_direction[l]->x = x+i;
+                possible_direction[l]->y = y+j;
+            }
+        }
+    }
+
+   /*  int index_min_heuristique = 0;
+    //Prend le chemin qui le rapproche le plus du trésor
     for (int i = 0; i < 4; i++){
         if (possible_direction[i] >= 0){
             if (possible_direction[i] < possible_direction[index_min_heuristique]){
                 index_min_heuristique = i;
             }
         }
-    }
+    } */
+    //Mettre les autres dans une pile pour les empreeinter plus tard
+
+
+    
 
 
 }
