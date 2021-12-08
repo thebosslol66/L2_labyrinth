@@ -69,7 +69,7 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
                     {
                         continue;
                     }
-                    self->data[i*j]->type = status[i+j];
+                    self->data[i+(j*self->width)].type = status[i+j];
                 }
                 
             }
@@ -79,15 +79,15 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     
 int get_heuristique(const struct Board * self, const int x, const int y){
 
-    return self->data[x+(y*self->width)]->heuristique;
+    return self->data[x+(y*self->width)].heuristique;
 }
 
 int get_cout(const struct Board * self, const int x, const int y){
-    return self->data[x+(y*self->width)]->cout;
+    return self->data[x+(y*self->width)].cout;
 } 
 
 char get_type(const struct Board * self, const int x, const int y){
-    return self->data[x+(y*self->width)]->type;
+    return self->data[x+(y*self->width)].type;
 } 
     
     // int i = 0;
