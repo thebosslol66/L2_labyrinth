@@ -21,15 +21,15 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->sortieY = y;
 }
 
-char * array_to_line(int w, int h) {
-    int size = w * h;
-    char *line = calloc(size, sizeof(size_t));
-    // for (size_t i = 0; i < size; i++)
-    // {
-    //     line[i] = i;
-    // }
-    return line;
-}
+// char * array_to_line(int w, int h) {
+//     int size = w * h;
+//     char *line = calloc(size, sizeof(size_t));
+//     // for (size_t i = 0; i < size; i++)
+//     // {
+//     //     line[i] = i;
+//     // }
+//     return line;
+// }
 
  void board_update(struct Board *self, int x, int y, char *status) {
     for (int r = 0; r < self->width; r++)
@@ -40,16 +40,33 @@ char * array_to_line(int w, int h) {
             int imax = c < self->height-1? c+1 : c;
             int jmin = r > 0? r-1 : r;
             int jmax = r < self->height-1? r+1 : r;
+            for (int i = imin; i <= imax; i++)
+            {
+                for (int j = jmin; j <= jmax; j++)
+                {
+                    if (i == c && j == r)
+                    {
+                        continue;
+                    }
+                    self->data[i*j]->type = status[i+j];
+                }
+                
+            }
         }
     }
 }
     
 int get_heuristique(const struct Board * self, const int x, const int y){
-    return 0;
+
+    return self->data[x+(y*self->width)]->heuristique;
 }
 
 int get_cout(const struct Board * self, const int x, const int y){
-    return 0;
+    return self->data[x+(y*self->width)]->cout;
+} 
+
+char get_type(const struct Board * self, const int x, const int y){
+    return self->data[x+(y*self->width)]->type;
 } 
     
     // int i = 0;
