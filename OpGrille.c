@@ -14,12 +14,12 @@ void board_unexplorecase_pop_front(struct Board * self, const int x, const int y
 }
 
 struct UnexploreCase * board_unexplorecase_remove_front(struct Board * self){
-    struct UnexploreCase * other = self-> unexplorePath;
+    struct UnexploreCase * other = self->unexplorePath;
     if (other == NULL){
         return other;
     }
-    self-> unexplorePath = self-> unexplorePath-> next;
-    other-> next = NULL;
+    self->unexplorePath = self->unexplorePath-> next;
+    other->next = NULL;
     return other;
 }
 
@@ -46,12 +46,14 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->tresorY = yt;
     self->sortieX = x;
     self->sortieY = y;
+    self->player.x = x;
+    self->player.y = y;
 }
 
 void board_destroy(struct Board *self) {
     board_unexplorecase_destroy(self);
-    int size = self->width*self->height;
     free(self->data);
+    free(self->player);
 }
 
 void board_print(const struct Board * self) {
@@ -84,15 +86,15 @@ void board_print(const struct Board * self) {
 //     return line;
 // }
 
- void board_update(struct Board *self, int x, int y, char *status) {
-    for (int r = 0; r < self->width; r++)
+ void board_update(struct Board *self, char *status) {
+    for (int r = 0; r < self->player.x; r++)
     {
-        for (int c = 0; r < self->height; c++)
+        for (int c = 0; r < self->player.y; c++)
         {
             int imin = c > 0? c-1 : c;
             int imax = c < self->height-1? c+1 : c;
             int jmin = r > 0? r-1 : r;
-            int jmax = r < self->height-1? r+1 : r;
+            int jmax = r < self->width-1? r+1 : r;
             for (int i = imin; i <= imax; i++)
             {
                 for (int j = jmin; j <= jmax; j++)
