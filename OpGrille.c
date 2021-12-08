@@ -5,6 +5,27 @@ void raiseErrorIfOutOfBounds(const struct Board * board, const int x, const int 
     assert(y<0||y>=board->height);
 }
 
+void unexplorecase_create(struct UnexploreCase * self, const int x, const int y){
+    if (self->next == NULL){
+        self->next = malloc(sizeof(struct UnexploreCase));
+        self->next->x = x;
+        self->next->y = y;
+        self->next->next = NULL;
+        return;
+    }
+    unexplorecase_create(self->next, x, y);
+}
+void board_unexplorecase_create(struct Board * self, const int x, const int y){
+    if (self->unexplorePath == NULL){
+        self->unexplorePath = malloc(sizeof(struct UnexploreCase));
+        self->unexplorePath->x = x;
+        self->unexplorePath->y = y;
+        self->unexplorePath->next = NULL;
+        return;
+    }
+    unexplorecase_create(self->unexplorePath, x, y);
+}
+
 void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt) {
     int size = width*height;
     self->data = calloc(size, sizeof(struct Case));

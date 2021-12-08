@@ -22,6 +22,7 @@ struct UnexploreCase {
 
 struct Board {
     struct Case * data; //Contain al information about plate
+    struct UnexploreCase * unexplorePath;
     int width;
     int height;
 
