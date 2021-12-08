@@ -184,7 +184,10 @@ int calculate_cout(const struct Board * board, const int x, const int y){
 
     for (int xt = minX; xt <= maxX; xt++){
         for (int yt = minY; yt <= maxY; yt++){
-            coutActual = min(coutActual,get_heuristique(board, xt, yt));
+            if (x == xt && y == yt){
+                continue;
+            }
+            coutActual = min(coutActual,get_heuristique(board, xt, yt)+1);
         }
     }
 
