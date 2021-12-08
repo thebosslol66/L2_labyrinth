@@ -20,9 +20,15 @@ struct UnexploreCase {
     struct UnexploreCase * next;
 };
 
+struct Player {
+    int x;
+    int y;
+};
+
 struct Board {
     struct Case * data; //Contain al information about plate
     struct UnexploreCase * unexplorePath;
+    struct Player * player;
     int width;
     int height;
 

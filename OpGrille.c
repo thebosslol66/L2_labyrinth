@@ -51,12 +51,7 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
 void board_destroy(struct Board *self) {
     board_unexplorecase_destroy(self);
     int size = self->width*self->height;
-    for (int i = 0; i < size; i++)
-    {
-        free(self->data[i]);
-        self->data[i] = NULL; 
-    }
-    self->data = NULL;
+    free(self->data);
 }
 
 void board_print(const struct Board * self) {
@@ -123,7 +118,7 @@ int get_cout(const struct Board * self, const int x, const int y){
 } 
 
 char get_type(const struct Board * self, const int x, const int y){
-    if (x >= width || x < 0 || y >= height || y < 0)
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
     {
         return 'W';
     }
@@ -156,47 +151,10 @@ int calculate_cout(const struct Board * board, const int x, const int y){
     return coutActual;
 }
 
-char * think(char * position){
-    fprintf(stderr, "Read %s.", position);
-    int * possible_direction;
-    possible_direction = calloc(4, sizeof(char));
-    possible_direction[0] = (position[1] == '_')?1:0;
-    possible_direction[1] = (position[3] == '_')?1:0;
-    possible_direction[2] = (position[4] == '_')?1:0;
-    possible_direction[3] = (position[6] == '_')?1:0;
-    int numberPosition = 0;
-    for (int i = 0; i < 4; i++){
-        numberPosition = numberPosition + possible_direction[i];
-    }
-    assert(numberPosition > 0);
-    int returnValue = rand()%numberPosition;
-    for (int i = 0; i < 4; i++){
-        if (possible_direction[i] && returnValue <=0){
-            switch(i){
-                case 0:{
-                    return "NORTH";
-                }
-                case 1:{
-                    return "WEST";
-                }
-                case 2:{
-                    return "EAST";
-                }
-                case 3:{
-                    return "SOUTH";
-                }
-            }
-        }
-        if (possible_direction[i]){
-            returnValue--;
-        }
-    }
-    return "NORTH";
-}
 
 char * think(struct Board * self, int x, int y){
-    raiseErrorIfOutOfBounds(board, x, y);
-    board_print(struct Board * self);
+    raiseErrorIfOutOfBounds(self, x, y);
+    board_print(self);
     int * possible_direction;
     possible_direction = calloc(4, sizeof(char));
     possible_direction[0] = (get_type(self, x, y-1) != 'W')?1:0; //Haut

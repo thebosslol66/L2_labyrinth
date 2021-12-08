@@ -43,7 +43,9 @@ int main() {
     fgets(buf, BUFSIZE, stdin);
     // update the state of the game
     // send the new direction
-    puts(think(buf)); // or "SOUTH" or "EAST" or "WEST"
+    board_update(&board, buf);
+
+    puts(think(&board)); // or "SOUTH" or "EAST" or "WEST"
     // get the result
     fgets(buf, BUFSIZE, stdin);
     if (strcmp(buf, "END\n") == 0) {
