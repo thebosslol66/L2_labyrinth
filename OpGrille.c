@@ -34,6 +34,7 @@ void board_unexplorecase_destroy(struct Board * self){
 void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt) {
     int size = width*height;
     self->data = calloc(size, sizeof(struct Case));
+    self->player = malloc(sizeof(struct Position));
     for (int i = 0; i < size; i++)
     {
         self->data[i].type = ' ';
@@ -46,8 +47,8 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->tresorY = yt;
     self->sortieX = x;
     self->sortieY = y;
-    self->player.x = x;
-    self->player.y = y;
+    self->player->x = x;
+    self->player->y = y;
 }
 
 void board_destroy(struct Board *self) {
