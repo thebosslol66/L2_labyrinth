@@ -37,14 +37,46 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     for (int i = 0; i < size; i++)
     {
         self->data[i].type = ' ';
-        self->data[i].heuristique = calculate_heuristique(x, y, xt, yt);
+        self->data[i].heuristique = calculate_heuristique(i%width, i/height, xt, yt);
     }
+    self->unexplorePath = NULL;
     self->width = width;
     self->height = height;
     self->tresorX = xt;
     self->tresorY = yt;
     self->sortieX = x;
     self->sortieY = y;
+}
+
+void board_destroy(struct Board *self) {
+    board_unexplorecase_destroy(self);
+    int size = self->width*self->height;
+    for (int i = 0; i < size; i++)
+    {
+        free(self->data[i]);
+        self->data[i] = NULL; 
+    }
+    self->data = NULL;
+}
+
+void board_print(const struct Board * self) {
+    for (int i = 0; i < self->width + 1; i++)
+    {
+        printf("W");
+    }
+    int size = self->width*self->height;
+    for (int i = 0; i < size; i++)
+    {
+        if (i % self->width == 0)
+        {
+            printf("W\nW");
+        }
+        printf("%c", self->data[i].type);
+    }
+    for (int i = 0; i < self->width + 1; i++)
+    {
+        printf("W");
+    }
 }
 
 // char * array_to_line(int w, int h) {
@@ -83,7 +115,6 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
 }
     
 int get_heuristique(const struct Board * self, const int x, const int y){
-
     return self->data[x+(y*self->width)].heuristique;
 }
 
@@ -92,6 +123,10 @@ int get_cout(const struct Board * self, const int x, const int y){
 } 
 
 char get_type(const struct Board * self, const int x, const int y){
+    if (x >= width || x < 0 || y >= height || y < 0)
+    {
+        return 'W';
+    }
     return self->data[x+(y*self->width)].type;
 } 
 
