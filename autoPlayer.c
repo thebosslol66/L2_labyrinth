@@ -2,44 +2,6 @@
 
 #include "OpGrille.h"
 
-char * think(char * position){
-    fprintf(stderr, "Read %s.", position);
-    int * possible_direction;
-    possible_direction = calloc(4, sizeof(char));
-    possible_direction[0] = (position[1] == '_')?1:0;
-    possible_direction[1] = (position[3] == '_')?1:0;
-    possible_direction[2] = (position[4] == '_')?1:0;
-    possible_direction[3] = (position[6] == '_')?1:0;
-    int numberPosition = 0;
-    for (int i = 0; i < 4; i++){
-        numberPosition = numberPosition + possible_direction[i];
-    }
-    assert(numberPosition > 0);
-    int returnValue = rand()%numberPosition;
-    for (int i = 0; i < 4; i++){
-        if (possible_direction[i] && returnValue <=0){
-            switch(i){
-                case 0:{
-                    return "NORTH";
-                }
-                case 1:{
-                    return "WEST";
-                }
-                case 2:{
-                    return "EAST";
-                }
-                case 3:{
-                    return "SOUTH";
-                }
-            }
-        }
-        if (possible_direction[i]){
-            returnValue--;
-        }
-    }
-    return "NORTH";
-}
-
 int main() {
     srand(time(NULL));
     setbuf(stdout, NULL);
@@ -88,5 +50,6 @@ int main() {
     break;
     }
     }
+    board_destroy(&board);
     return 0;
 }
