@@ -23,6 +23,8 @@ struct UnexploreCase {
 struct Position {
     int x;
     int y;
+    int state; //état du personnage dans sa quete
+    char * lastInstruction;
 };
 
 struct Board {
