@@ -7,6 +7,7 @@
 #define abs(a)(a<0?-a:a)
 #define max(a,b)(a>=b?a:b)
 #define min(a,b)(a<=b?a:b)
+#define POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y 0
 
 struct Case {
     int cout;
@@ -42,3 +43,4 @@ struct Board {
 };
 
 void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt);
+char * think(struct Board * self);

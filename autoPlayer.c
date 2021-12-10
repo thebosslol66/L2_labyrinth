@@ -35,8 +35,8 @@ int main() {
 
 
 
-    fgets(buf, BUFSIZE, stderr);
-    fprintf(stderr, "Flush : %s\n", buf);
+    //fgets(buf, BUFSIZE, stderr);
+    //fprintf(stderr, "Flush : %s\n", buf);
 
     for (;;) {
     // get the adjacent cells

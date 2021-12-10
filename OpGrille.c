@@ -52,7 +52,7 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->player->x = x;
     self->player->y = y;
     self->player->state = 0;
-    self->player->lastInstruction = "NORTH";
+    self->player->lastInstruction = " ";
     self->data[self->player->x+(self->player->y*self->width)].cout = 0;
 }
 
@@ -77,7 +77,7 @@ void board_print(const struct Board * self) {
         if (self->player->x == i%self->width && self->player->y == i/self->width){
             fprintf(stderr,"@");
         } else {
-            fprintf(stderr,"%d\t", self->data[i].heuristique);
+            fprintf(stderr,"%c", self->data[i].type);
         }
     }
     fprintf(stderr,"W\nW");
@@ -92,6 +92,19 @@ void board_print(const struct Board * self) {
 void board_update(struct Board *self, char *status) {
     //fprintf(stderr,status);
     for (int i =0; i < 8; i++){
+        //left
+        if (self->player->x == 0 && (i == 0 || i == 3 || i == 5)){
+            continue;
+        }
+        if (self->player->x == self->width-1 && (i == 2 || i == 4 || i == 7)){
+            continue;
+        }
+        if (self->player->y == 0 && (i == 0 || i == 1 || i == 2)){
+            continue;
+        }
+        if (self->player->y == self->height-1 && (i == 5 || i == 6 || i == 7)){
+            continue;
+        }
         if (i>3){
             self->data[(self->player->x+((i+1)%3-1))+((self->player->y+((i+1)/3)-1)*self->width)].type = status[i];
             //fprintf(stderr,"%c, pos: %d\n",status[i], ((self->player->x+((i+1)%3-1))+((self->player->y+((i+1)/3-1))*self->width)));
@@ -104,7 +117,16 @@ void board_update(struct Board *self, char *status) {
     }
 }
     
+void set_heuristique(struct Board * self, const int x, const int y, const int heuristique){
+    self->data[x+(y*self->width)].heuristique = heuristique;
+}
+
 int get_heuristique(const struct Board * self, const int x, const int y){
+    //simplement pour le test
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
+    {
+        return -1;
+    }
     return self->data[x+(y*self->width)].heuristique;
 }
 
@@ -112,6 +134,10 @@ void set_cout(struct Board * self, const int x, const int y, const int cout){
     self->data[x+(y*self->width)].cout = cout;
 }
 int get_cout(const struct Board * self, const int x, const int y){
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
+    {
+        return -1;
+    }
     return self->data[x+(y*self->width)].cout;
 } 
 
@@ -173,7 +199,26 @@ void movePlayer(struct Board * self){
         }
 }
 
-//TODO: mettre a jour le cout
+void changerLastPositionWithInt(struct Board * self, const int x){
+    switch(x){
+        case -2:{ //North
+            self->player->lastInstruction =  "NORTH";
+        }break;
+        case -1:{ //WEST
+            self->player->lastInstruction =  "WEST";
+        }break;
+        case 1:{ //East
+            self->player->lastInstruction =  "EAST";
+        }break;
+        case 2:{ //South
+            self->player->lastInstruction =  "SOUTH";
+        }break;
+        default:{//North
+            self->player->lastInstruction =  "NORTH";
+        }
+    }
+}
+
 char * think(struct Board * self){
     int x = self->player->x;
     int y = self->player->y;
@@ -181,26 +226,63 @@ char * think(struct Board * self){
     fprintf(stderr, "x : %d,   y:%d \n", x, y);
     raiseErrorIfOutOfBounds(self, x, y);
     board_print(self);
-    struct Position ** possible_direction;
-    possible_direction = calloc(4, sizeof(struct Position));
     int k = 0;
     if (self->player->state == 0){
-        //TODO: fix valgrind: m_mallocfree.c:305 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
-        //TODO: Aller tout droit jusqu'a ce qu'on ne puisse plus
+        struct Position ** possible_direction;
+        possible_direction = calloc(4, sizeof(struct Position));
+        //TODO: Aller tout droit jusqu'a ce qu'on ne puisse plus(pas sur)
+        //TODO: Ajout de l'algo A*
+        //TODO: Supprimer de la pile les chemins qui sont dans une boucle
+
+        //verifier si on es plus proche en x ou y
+        int dx = x - self->tresorX;
+        int dy = y - self->tresorX;
+
         for (int i =-1; i <= 1; i++){
             int jtt = i==0?-1:0;
             for (int j = jtt; j <= 1; j+=2){
                 fprintf(stderr, "i: %d, j: %d, type: %c, cout: %d, heuristique: %d\n", i, j, get_type(self, x+i, y+j), get_cout(self, x+i, y+j), get_heuristique(self, x+i, y+j));
                 if (get_type(self, x+i, y+j) != 'W' && get_cout(self, x+i, y+j) == -1){
+                    //TODO: modifier la condition d'acces au tresor
                     if (get_type(self, x+i, y+j) == 'T'){
                         fprintf(stderr, "Treasure found!\n");
                         self->player->state = 3;
                     }
                     //verifier si il y a 3 murs qui l'entoure si c'est le cas on le passe
-                    int l = 0;
+                    int nbWall = 0;
+                    for (int i2 =-1; i2 <= 1; i2++){
+                        int jtt2 = i2==0?-1:0;
+                        for (int j2 = jtt2; j2 <= 1; j2+=2){
+                            if (get_type(self, x+i+i2, y+j+j2) == 'W'){
+                                nbWall++;
+                            }
+                        }
+                    }
+                    set_cout(self, x+i, y+j,get_cout(self,x, y)+1);
+                    if(nbWall == 3 && get_type(self, x+i, y+j) != 'T'){
+                        continue;
+                    }
 
+                    int l = 0;
                     //tri insertion
-                    while (l < k && get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y) < get_heuristique(self, x+i, y+j)){
+                    while (l < k && get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y) <= get_heuristique(self, x+i, y+j)){
+                        if((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100-POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100 >= get_heuristique(self, x+i, y+j) &&
+                        ((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100+POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100) <= get_heuristique(self, x+i, y+j)){
+                            if (abs(dx) > abs(dy)){
+                                int dxt1 = x+i - self->tresorX;
+                                int dxt2 = possible_direction[l]->x - self->tresorX;
+                                if (abs(dxt1) <= abs(dxt2)){
+                                    //dtx1 est le plus proche donc on le place avant
+                                    break;
+                                }
+                            }
+                            int dyt1 = y+j - self->tresorY;
+                            int dyt2 = possible_direction[l]->y - self->tresorY;
+                            if (abs(dyt1) <= abs(dyt2)){
+                                //dty1 est le plus proche donc on le place avant
+                                break;
+                            }
+                        }
                         l++;
                     }
                     fprintf(stderr, "\nl:%d\n", l);
@@ -211,7 +293,6 @@ char * think(struct Board * self){
                     possible_direction[l] = malloc(sizeof(struct Position));
                     possible_direction[l]->x = x+i;
                     possible_direction[l]->y = y+j;
-                    set_cout(self, x+i, y+j,get_cout(self,x, y)+1);
                     k++;
                 }
             }
@@ -219,42 +300,30 @@ char * think(struct Board * self){
 
         //Unexplore path without first because we go into
         for (int i = k-1; i> 0; i--){
-            fprintf(stderr, "What\n");
+            fprintf(stderr, "Yeh\n");
             board_unexplorecase_push_front(self, possible_direction[i]->x, possible_direction[i]->y);
-            
+            set_heuristique(self, possible_direction[i]->x, possible_direction[i]->y, get_cout(self,possible_direction[i]->x, possible_direction[i]->y)+calculate_heuristique(possible_direction[i]->x, possible_direction[i]->y, self->tresorX, self->tresorY));
+            free(possible_direction[i]);
         }
         if (self->unexplorePath != NULL && self->unexplorePath->next != NULL){
             assert(self->unexplorePath->x != self->unexplorePath->next->x || self->unexplorePath->y != self->unexplorePath->next->y);
-
         }
         
         if (possible_direction[0] != NULL){
             int xt = possible_direction[0]->x -x;
             int yt = possible_direction[0]->y -y;
-            fprintf(stderr, "xt+2*yt: %d\n", xt+2*yt);
-            switch(xt+2*yt){
-                case -2:{ //North
-                    self->player->lastInstruction =  "NORTH";
-                }break;
-                case -1:{ //WEST
-                    self->player->lastInstruction =  "WEST";
-                }break;
-                case 1:{ //East
-                    self->player->lastInstruction =  "EAST";
-                }break;
-                case 2:{ //South
-                    self->player->lastInstruction =  "SOUTH";
-                }break;
-                default:{//North
-                    self->player->lastInstruction =  "NORTH";
-                }
-            }
+            set_heuristique(self, possible_direction[0]->x, possible_direction[0]->y, get_cout(self,possible_direction[0]->x, possible_direction[0]->y)+calculate_heuristique(possible_direction[0]->x, possible_direction[0]->y, self->tresorX, self->tresorY));
+            free(possible_direction[0]);
+            changerLastPositionWithInt(self, xt+2*yt);
+            free(possible_direction);
             movePlayer(self);
+            fprintf(stderr, "Direction %s\n", self->player->lastInstruction);
             return self->player->lastInstruction;
 
-        } else {//C'est un cul de sac tout a déja été exploré
-            self->player->state = 1;
         }
+        //C'est un cul de sac tout a déja été exploré
+        self->player->state = 1;
+        free(possible_direction);
     }
     if (self->player->state == 1){
         fprintf(stderr, "\n3\n");
@@ -276,9 +345,6 @@ char * think(struct Board * self){
                 self->player->lastInstruction =  "NORTH";
             }
         }
-        if (self->player->x == self->unexplorePath->x && self->player->y == self->unexplorePath->y){
-            board_unexplorecase_remove_front(self);
-        }
         movePlayer(self);
         self->player->state = 2;//Demi-tour éffectué maintenant on rebrousse chemin
         return self->player->lastInstruction;
@@ -293,26 +359,10 @@ char * think(struct Board * self){
                 if (get_type(self, x+i, y+j) != 'W'){
                     if (x+i == self->unexplorePath->x && y+j == self->unexplorePath->y){
                         fprintf(stderr, "i: %d, j: %d\n", i, j);
-                        switch(i+2*j){
-                            case -2:{ //North
-                                self->player->lastInstruction =  "NORTH";
-                            }break;
-                            case -1:{ //WEST
-                                self->player->lastInstruction =  "WEST";
-                            }break;
-                            case 1:{ //East
-                                self->player->lastInstruction =  "EAST";
-                            }break;
-                            case 2:{ //South
-                                self->player->lastInstruction =  "SOUTH";
-                            }break;
-                            default:{//North
-                                self->player->lastInstruction =  "NORTH";
-                            }
-                        }
+                        changerLastPositionWithInt(self, i+2*j);
                         movePlayer(self);
                         
-                        board_unexplorecase_remove_front(self);
+                        free(board_unexplorecase_remove_front(self));
                         self->player->state = 0;
                         //Retour a la situation initiale et découvrons un nouveau chemin
                         return self->player->lastInstruction;
@@ -329,23 +379,7 @@ char * think(struct Board * self){
         int xt = xmin -x;
         int yt = ymin -y;
         fprintf(stderr, "xt+2*yt: %d\n", xt+2*yt);
-        switch(xt+2*yt){
-            case -2:{ //North
-                self->player->lastInstruction =  "NORTH";
-            }break;
-            case -1:{ //WEST
-                self->player->lastInstruction =  "WEST";
-            }break;
-            case 1:{ //East
-                self->player->lastInstruction =  "EAST";
-            }break;
-            case 2:{ //South
-                self->player->lastInstruction =  "SOUTH";
-            }break;
-            default:{//North
-                self->player->lastInstruction =  "NORTH";
-            }
-        }
+        changerLastPositionWithInt(self, xt+2*yt);
         movePlayer(self);
         return self->player->lastInstruction;
         
@@ -353,7 +387,8 @@ char * think(struct Board * self){
     
     if (self->player->state == 3){
         int coutMin = self->width*self->height;
-        int xmin, ymin;
+        int xmin = 0;
+        int ymin = 0;
         for (int i =-1; i <= 1; i++){
             int jtt = i==0?-1:0;
             for (int j = jtt; j <= 1; j+=2){
@@ -372,23 +407,7 @@ char * think(struct Board * self){
         int xt = xmin -x;
         int yt = ymin -y;
         fprintf(stderr, "xt+2*yt: %d\n", xt+2*yt);
-        switch(xt+2*yt){
-            case -2:{ //North
-                self->player->lastInstruction =  "NORTH";
-            }break;
-            case -1:{ //WEST
-                self->player->lastInstruction =  "WEST";
-            }break;
-            case 1:{ //East
-                self->player->lastInstruction =  "EAST";
-            }break;
-            case 2:{ //South
-                self->player->lastInstruction =  "SOUTH";
-            }break;
-            default:{//North
-                self->player->lastInstruction =  "NORTH";
-            }
-        }
+        changerLastPositionWithInt(self, xt+2*yt);
         movePlayer(self);
         return self->player->lastInstruction;
     }
