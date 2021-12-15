@@ -12,7 +12,7 @@
 struct Case {
     int cout;
     int heuristique;
-    char type; // ' ' = vide 
+    char type; // ' ' = vide
 };
 
 struct UnexploreCase {

@@ -221,16 +221,7 @@ void changerLastPositionWithInt(struct Board * self, const int x){
     }
 }
 
-struct Position * projectionOnWall(const struct Board * self, const int xDepart, const int yDepart){
-    return NULL;
-}
-
-bool canAccessToTreasure(const struct Board * self, const int xDepart, const int yDepart, const int xProjection, const int yProjection){
-    return true;
-}
-
-bool havePathToTreasure(const struct Board * self, const int xDepart, const int yDepart){
-    return true;
+void havePathToTreasure(const struct Board * self, const int xDepart, const int yDepart){
 }
 
 char * think(struct Board * self){
