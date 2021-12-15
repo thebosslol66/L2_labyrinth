@@ -43,12 +43,12 @@ echo "${1} algo win ${firstCount} times"
 echo "${2} algo win ${secondCount} times"
 if [ $firstCount -gt $secondCount ]
 then
-	echo "${1} Win"
+	echo -e "\e[32m${1} Win\e[0m"
 elif [ $firstCount -lt $secondCount ]
 then
-	echo "${2} Win"
+	echo -e "\e[34m${2} Win\e[0m"
 else
-	echo "Equality"
+	echo -e "\e[35mEquality\e[0m"
 fi
 
 firstCount=0
@@ -57,8 +57,8 @@ cp=100
 
 while [ "$cp" != 0 ]
 do 
-	echo "./labyrinth-server ${1} ${2}"
-	./labyrinth-server $1 $2 >> /dev/null 2>> out.txt
+	echo "./labyrinth-server -p ${1} ${2}"
+	./labyrinth-server -p $1 $2 >> /dev/null 2>> out.txt
 	check_output
 	rm out.txt
 	cp=$(($cp-1))
@@ -67,10 +67,11 @@ echo "${1} algo win ${firstCount} times"
 echo "${2} algo win ${secondCount} times"
 if [ $firstCount -gt $secondCount ]
 then
-	echo "${1} Win"
+	echo -e "\e[32m${1} Win\e[0m"
 elif [ $firstCount -lt $secondCount ]
 then
-	echo "${2} Win"
+	echo -e "\e[34m${2} Win\e[0m"
 else
-	echo "Equality"
+	echo -e "\e[35mEquality\e[0m"
 fi
+

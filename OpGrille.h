@@ -24,6 +24,11 @@ struct UnexploreCase {
 struct Position {
     int x;
     int y;
+};
+
+struct Player {
+    int x;
+    int y;
     int state; //état du personnage dans sa quete
     char * lastInstruction;
 };
@@ -31,7 +36,7 @@ struct Position {
 struct Board {
     struct Case * data; //Contain al information about plate
     struct UnexploreCase * unexplorePath;
-    struct Position * player;
+    struct Player * player;
     int width;
     int height;
 

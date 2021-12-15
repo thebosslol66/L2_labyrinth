@@ -219,6 +219,18 @@ void changerLastPositionWithInt(struct Board * self, const int x){
     }
 }
 
+struct Position * projectionOnWall(const struct Board * self, const int xDepart, const int yDepart){
+    return NULL;
+}
+
+bool canAccessToTreasure(const struct Board * self, const int xDepart, const int yDepart, const int xProjection, const int yProjection){
+    return true;
+}
+
+bool havePathToTreasure(const struct Board * self, const int xDepart, const int yDepart){
+    return true;
+}
+
 char * think(struct Board * self){
     int x = self->player->x;
     int y = self->player->y;
@@ -248,7 +260,7 @@ char * think(struct Board * self){
                         fprintf(stderr, "Treasure found!\n");
                         self->player->state = 3;
                     }
-                    //verifier si il y a 3 murs qui l'entoure si c'est le cas on le passe
+                    
                     int nbWall = 0;
                     for (int i2 =-1; i2 <= 1; i2++){
                         int jtt2 = i2==0?-1:0;
