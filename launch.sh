@@ -1,7 +1,7 @@
 #!/bin/bash
 _passback() { while [ 0 -lt $# ]; do printf '%q=%q;' "$1" "${!1}"; shift; done; }
 
-#seed=("4137502622" "357668081" "658417210" "3103433381" "1938583126" "2581622833")
+seed=("4137502622" "357668081" "658417210" "3103433381" "1938583126" "2581622833")
 firstCount=0
 secondCount=0
 
@@ -53,7 +53,7 @@ fi
 
 firstCount=0
 secondCount=0
-cp=100
+cp=20
 
 while [ "$cp" != 0 ]
 do 
