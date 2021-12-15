@@ -74,7 +74,9 @@ void board_print(const struct Board * self) {
         {
             fprintf(stderr,"W\nW");
         }
-        if (self->player->x == i%self->width && self->player->y == i/self->width){
+        if (self->tresorX == i%self->width && self->tresorY == i/self->width){
+            fprintf(stderr,"T");
+        } else if (self->player->x == i%self->width && self->player->y == i/self->width){
             fprintf(stderr,"@");
         } else {
             fprintf(stderr,"%c", self->data[i].type);
