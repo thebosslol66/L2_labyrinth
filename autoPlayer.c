@@ -1,6 +1,6 @@
 #include "autoPlayer.h"
 
-#include "OpGrille.h"
+#include "OpGrilleV2.h"
 
 int main() {
     srand(time(NULL));

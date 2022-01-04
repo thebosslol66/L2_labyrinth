@@ -35,7 +35,7 @@ void board_unexplorecase_destroy(struct Board * self){
 void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt) {
     int size = width*height;
     self->data = calloc(size, sizeof(struct Case));
-    self->player = malloc(sizeof(struct Position));
+    self->player = malloc(sizeof(struct Player));
     for (int i = 0; i < size; i++)
     {
         self->data[i].type = ' ';
@@ -78,9 +78,35 @@ void board_print(const struct Board * self) {
             fprintf(stderr,"T");
         } else if (self->player->x == i%self->width && self->player->y == i/self->width){
             fprintf(stderr,"@");
+        }
+        else if(self->unexplorePath != NULL && self->unexplorePath->x == i%self->width && self->unexplorePath->y == i/self->width){
+                fprintf(stderr,"C");
         } else {
             fprintf(stderr,"%c", self->data[i].type);
         }
+    }
+    fprintf(stderr,"W\nW");
+    for (int i = 0; i < self->width + 1; i++)
+    {
+        fprintf(stderr,"W");
+    }
+    fprintf(stderr,"\n");
+}
+
+void board_print2(const struct Board * self, const int * self2) {
+    for (int i = 0; i < self->width + 1; i++)
+    {
+        fprintf(stderr,"W");
+    }
+    int size = self->width*self->height;
+    for (int i = 0; i < size; i++)
+    {
+        if (i % self->width == 0)
+        {
+            fprintf(stderr,"W\nW");
+        }
+        fprintf(stderr,"%d",self2[i]);
+        
     }
     fprintf(stderr,"W\nW");
     for (int i = 0; i < self->width + 1; i++)
@@ -221,7 +247,177 @@ void changerLastPositionWithInt(struct Board * self, const int x){
     }
 }
 
-void havePathToTreasure(const struct Board * self, const int xDepart, const int yDepart){
+int get_type_smoke(const struct Board * self, const int * smokeBoard,  const int x, const int y){
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
+    {
+        return 0;
+    }
+    return smokeBoard[x+(y*self->width)];
+} 
+
+void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int isFirst){
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
+    {
+        return;
+    }
+    if (smokeBoard[x+y*self->width] == 1){
+        return;
+    }
+    if (get_type(self, x, y) != ' ' && !isFirst){
+        return ;
+    }
+    smokeBoard[x+y*self->width] = 1;
+    propagateSmoke(self, smokeBoard, x+1, y, 0);
+    propagateSmoke(self, smokeBoard, x-1, y, 0);
+    propagateSmoke(self, smokeBoard, x, y+1, 0);
+    propagateSmoke(self, smokeBoard, x, y-1, 0);
+
+}
+
+struct PossiblePosition * PossiblePositionCreate(){
+    struct PossiblePosition * self = malloc(sizeof(struct PossiblePosition));
+    self->pos =NULL;
+    self->n =0;
+    return self;
+}
+
+void PossiblePositionAppdend(struct PossiblePosition * self, const int x, const int y){
+    self->n++;
+    self->pos = realloc(self->pos, self->n*sizeof(struct Position));
+    self->pos[self->n-1] = malloc(sizeof(struct Position));
+    self->pos[self->n-1]->x = x;
+    self->pos[self->n-1]->y = y;
+
+}
+void PossiblePositionDestroy(struct PossiblePosition * self){
+    for (size_t i = 0; i < self->n; i++){
+        free(self->pos[i]);
+    }
+    free(self->pos);
+    free(self);
+}
+void PossiblePositionRemoveFront(struct PossiblePosition * self){
+    self->n--;
+    free(self->pos[0]);
+    for (size_t i=0; i < self->n;i++){
+        self->pos[i] = self->pos[i+1];
+    }
+}
+
+struct PossiblePosition * possiblePositionFromTreasure(struct Board * self){
+    struct PossiblePosition * verified = PossiblePositionCreate();
+    struct PossiblePosition * unVerified = PossiblePositionCreate();
+    struct PossiblePosition * alreadyVisited = PossiblePositionCreate();
+    for (int i =-1; i <= 1; i++){
+        int jtt = i==0?-1:0;
+        for (int j = jtt; j <= 1; j+=2){
+            if (get_type(self,self->tresorX + i, (self->tresorY+j)) == ' '){
+                PossiblePositionAppdend(verified,self->tresorX + i, (self->tresorY+j));
+            }
+            if (get_type(self,self->tresorX + i, (self->tresorY+j)) == '_'){
+                PossiblePositionAppdend(unVerified,self->tresorX + i, (self->tresorY+j));
+            }
+        }
+    }
+    int nbBreack = 20;
+    while(unVerified->n > 0 && nbBreack > 0){
+        int xt =unVerified->pos[0]->x;
+        int yt =unVerified->pos[0]->y;
+        int isLast = 1;
+        for (int i =-1; i <= 1; i++){
+            int jtt = i==0?-1:0;
+            for (int j = jtt; j <= 1; j+=2){
+                if (get_type(self, unVerified->pos[unVerified->n-1]->x+ i, (yt+j)) == ' '){
+                    PossiblePositionAppdend(verified,xt + i, (yt+j));
+                    isLast=0;
+                }
+                if (get_type(self, xt+i, (yt+j)) == '_' ){
+                    if (get_cout(self, xt+i, (yt+j)) < 0){
+                        int visited = 0;
+                        for (size_t k = 0; k < alreadyVisited->n; k++){
+                            if (xt + i == alreadyVisited->pos[k]->x || yt+j == alreadyVisited->pos[k]->y){
+                                visited = 1;
+                            }
+                        }
+                        if (!visited){
+                            PossiblePositionAppdend(unVerified, xt + i, (yt+j));
+                            isLast=0;
+                            fprintf(stderr, "1 x: %d y:%d\n",xt+i, yt+j);
+                        }
+                    }
+                    else{
+                        //add to possible path if remove
+                        board_unexplorecase_push_front(self, xt+i, yt+j);
+                    }
+                }
+            }
+        }
+        if (isLast == 1){
+            PossiblePositionAppdend(verified,xt, yt);
+            fprintf(stderr, "2\n");
+        }
+        PossiblePositionRemoveFront(unVerified);
+        PossiblePositionAppdend(alreadyVisited, xt, yt);
+        fprintf(stderr, "%d number in unverified, x: %d y:%d\n", unVerified->n,xt, yt);
+        nbBreack--;
+    }
+    PossiblePositionDestroy(unVerified);
+    PossiblePositionDestroy(alreadyVisited);
+    return verified;
+}
+
+void havePathToTreasure(struct Board * self){
+    int * smokeBoard = calloc(self->width * self->height, sizeof(int));
+
+    struct PossiblePosition * verified = possiblePositionFromTreasure(self);
+
+    //verifier si autour du trésor c'est libre sinon allez a la case vide la plus proche ou avant un cout positif
+    for(size_t i =0; i < verified->n; i++){
+        propagateSmoke(self, smokeBoard, verified->pos[i]->x, verified->pos[i]->y, 1);
+    }
+    PossiblePositionDestroy(verified);
+
+    struct UnexploreCase *node = self->unexplorePath;
+    if (node != NULL){
+        while(node->next != NULL){
+            int canJoinTreasure = 0;
+            for (int i =-1; i <= 1; i++){
+                int jtt = i==0?-1:0;
+                for (int j = jtt; j <= 1; j+=2){
+                    if (get_type_smoke(self, smokeBoard,node->next->x + i, (node->next->y+j)) == 1){
+                        canJoinTreasure = 1;
+                    }
+                }
+            }
+            if (!canJoinTreasure){
+                struct UnexploreCase *t = node->next;
+                node->next = node->next->next;
+                free(t);
+            }
+            else{
+                node = node->next;
+            }
+        }
+    }
+    
+    if (self->unexplorePath != NULL){
+        int canJoinTreasure = 0;
+        for (int i =-1; i <= 1; i++){
+            int jtt = i==0?-1:0;
+            for (int j = jtt; j <= 1; j+=2){
+                if (get_type_smoke(self, smokeBoard, self->unexplorePath->x + i, (self->unexplorePath->y+j)) == 1){
+                    canJoinTreasure = 1;
+                }
+            }
+        }
+        if (!canJoinTreasure){
+            struct UnexploreCase *t = self->unexplorePath;
+            self->unexplorePath = self->unexplorePath->next;
+            free(t);
+        }
+    }
+    board_print2(self, smokeBoard);
+    free(smokeBoard);
 }
 
 char * think(struct Board * self){
@@ -238,97 +434,107 @@ char * think(struct Board * self){
         //TODO: Aller tout droit jusqu'a ce qu'on ne puisse plus(pas sur)
         //TODO: Ajout de l'algo A*
         //TODO: Supprimer de la pile les chemins qui sont dans une boucle
+        if (x == self->tresorX && y == self->tresorY){
+            fprintf(stderr, "Treasure found!\n");
+            self->player->state = 3;
+        }
+        else{
 
-        //verifier si on es plus proche en x ou y
-        int dx = x - self->tresorX;
-        int dy = y - self->tresorX;
+            //verifier si on es plus proche en x ou y
+            int dx = x - self->tresorX;
+            int dy = y - self->tresorX;
 
-        for (int i =-1; i <= 1; i++){
-            int jtt = i==0?-1:0;
-            for (int j = jtt; j <= 1; j+=2){
-                fprintf(stderr, "i: %d, j: %d, type: %c, cout: %d, heuristique: %d\n", i, j, get_type(self, x+i, y+j), get_cout(self, x+i, y+j), get_heuristique(self, x+i, y+j));
-                if (get_type(self, x+i, y+j) != 'W' && get_cout(self, x+i, y+j) == -1){
-                    //TODO: modifier la condition d'acces au tresor
-                    if (get_type(self, x+i, y+j) == 'T'){
-                        fprintf(stderr, "Treasure found!\n");
-                        self->player->state = 3;
-                    }
-                    
-                    int nbWall = 0;
-                    for (int i2 =-1; i2 <= 1; i2++){
-                        int jtt2 = i2==0?-1:0;
-                        for (int j2 = jtt2; j2 <= 1; j2+=2){
-                            if (get_type(self, x+i+i2, y+j+j2) == 'W'){
-                                nbWall++;
+            for (int i =-1; i <= 1; i++){
+                int jtt = i==0?-1:0;
+                for (int j = jtt; j <= 1; j+=2){
+                    fprintf(stderr, "i: %d, j: %d, type: %c, cout: %d, heuristique: %d\n", i, j, get_type(self, x+i, y+j), get_cout(self, x+i, y+j), get_heuristique(self, x+i, y+j));
+                    if (get_type(self, x+i, y+j) != 'W' && get_cout(self, x+i, y+j) == -1){
+
+                        
+                        int nbWall = 0;
+                        for (int i2 =-1; i2 <= 1; i2++){
+                            int jtt2 = i2==0?-1:0;
+                            for (int j2 = jtt2; j2 <= 1; j2+=2){
+                                if (get_type(self, x+i+i2, y+j+j2) == 'W'){
+                                    nbWall++;
+                                }
                             }
                         }
-                    }
-                    set_cout(self, x+i, y+j,get_cout(self,x, y)+1);
-                    if(nbWall == 3 && get_type(self, x+i, y+j) != 'T'){
-                        continue;
-                    }
+                        set_cout(self, x+i, y+j,get_cout(self,x, y)+1);
+                        if(nbWall == 3 && get_type(self, x+i, y+j) != 'T'){
+                            continue;
+                        }
 
-                    int l = 0;
-                    //tri insertion
-                    while (l < k && get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y) <= get_heuristique(self, x+i, y+j)){
-                        if((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100-POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100 >= get_heuristique(self, x+i, y+j) &&
-                        ((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100+POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100) <= get_heuristique(self, x+i, y+j)){
-                            if (abs(dx) > abs(dy)){
-                                int dxt1 = x+i - self->tresorX;
-                                int dxt2 = possible_direction[l]->x - self->tresorX;
-                                if (abs(dxt1) <= abs(dxt2)){
-                                    //dtx1 est le plus proche donc on le place avant
+                        int l = 0;
+                        //tri insertion
+                        while (l < k && get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y) <= get_heuristique(self, x+i, y+j)){
+                            if((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100-POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100 >= get_heuristique(self, x+i, y+j) &&
+                            ((get_heuristique(self, possible_direction[l]->x, possible_direction[l]->y)*(100+POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y))/100) <= get_heuristique(self, x+i, y+j)){
+                                if (abs(dx) > abs(dy)){
+                                    int dxt1 = x+i - self->tresorX;
+                                    int dxt2 = possible_direction[l]->x - self->tresorX;
+                                    if (abs(dxt1) <= abs(dxt2)){
+                                        //dtx1 est le plus proche donc on le place avant
+                                        break;
+                                    }
+                                }
+                                int dyt1 = y+j - self->tresorY;
+                                int dyt2 = possible_direction[l]->y - self->tresorY;
+                                if (abs(dyt1) <= abs(dyt2)){
+                                    //dty1 est le plus proche donc on le place avant
                                     break;
                                 }
                             }
-                            int dyt1 = y+j - self->tresorY;
-                            int dyt2 = possible_direction[l]->y - self->tresorY;
-                            if (abs(dyt1) <= abs(dyt2)){
-                                //dty1 est le plus proche donc on le place avant
-                                break;
-                            }
+                            l++;
                         }
-                        l++;
+                        fprintf(stderr, "\nl:%d\n", l);
+                        for (int m = k-1; m>=l; m--){
+                            fprintf(stderr, "\nl:%d, m:%d\n", l, m);
+                            possible_direction[m+1] = possible_direction[m];
+                        }
+                        possible_direction[l] = malloc(sizeof(struct Position));
+                        possible_direction[l]->x = x+i;
+                        possible_direction[l]->y = y+j;
+                        k++;
                     }
-                    fprintf(stderr, "\nl:%d\n", l);
-                    for (int m = k-1; m>=l; m--){
-                        fprintf(stderr, "\nl:%d, m:%d\n", l, m);
-                        possible_direction[m+1] = possible_direction[m];
-                    }
-                    possible_direction[l] = malloc(sizeof(struct Position));
-                    possible_direction[l]->x = x+i;
-                    possible_direction[l]->y = y+j;
-                    k++;
                 }
             }
-        }
 
-        //Unexplore path without first because we go into
-        for (int i = k-1; i> 0; i--){
-            fprintf(stderr, "Yeh\n");
-            board_unexplorecase_push_front(self, possible_direction[i]->x, possible_direction[i]->y);
-            set_heuristique(self, possible_direction[i]->x, possible_direction[i]->y, get_cout(self,possible_direction[i]->x, possible_direction[i]->y)+calculate_heuristique(possible_direction[i]->x, possible_direction[i]->y, self->tresorX, self->tresorY));
-            free(possible_direction[i]);
-        }
-        if (self->unexplorePath != NULL && self->unexplorePath->next != NULL){
-            assert(self->unexplorePath->x != self->unexplorePath->next->x || self->unexplorePath->y != self->unexplorePath->next->y);
-        }
-        
-        if (possible_direction[0] != NULL){
-            int xt = possible_direction[0]->x -x;
-            int yt = possible_direction[0]->y -y;
-            set_heuristique(self, possible_direction[0]->x, possible_direction[0]->y, get_cout(self,possible_direction[0]->x, possible_direction[0]->y)+calculate_heuristique(possible_direction[0]->x, possible_direction[0]->y, self->tresorX, self->tresorY));
-            free(possible_direction[0]);
-            changerLastPositionWithInt(self, xt+2*yt);
+            //Unexplore path without first because we go into
+            for (int i = k-1; i> 0; i--){
+                fprintf(stderr, "Yeh\n");
+                board_unexplorecase_push_front(self, possible_direction[i]->x, possible_direction[i]->y);
+                set_heuristique(self, possible_direction[i]->x, possible_direction[i]->y, get_cout(self,possible_direction[i]->x, possible_direction[i]->y)+calculate_heuristique(possible_direction[i]->x, possible_direction[i]->y, self->tresorX, self->tresorY));
+                free(possible_direction[i]);
+            }
+            if (self->unexplorePath != NULL && self->unexplorePath->next != NULL){
+                assert(self->unexplorePath->x != self->unexplorePath->next->x || self->unexplorePath->y != self->unexplorePath->next->y);
+            }
+
+            //si on est a 1 d'un bord on supprimme les chemins devenus inacessibles
+            if (x == 1 || x == self->width-2 || y == 1 || y == self->height-2){
+
+                fprintf(stderr, "1\n");
+                havePathToTreasure(self);
+                fprintf(stderr, "2\n");
+            }
+            
+            if (possible_direction[0] != NULL){
+                int xt = possible_direction[0]->x -x;
+                int yt = possible_direction[0]->y -y;
+                set_heuristique(self, possible_direction[0]->x, possible_direction[0]->y, get_cout(self,possible_direction[0]->x, possible_direction[0]->y)+calculate_heuristique(possible_direction[0]->x, possible_direction[0]->y, self->tresorX, self->tresorY));
+                free(possible_direction[0]);
+                changerLastPositionWithInt(self, xt+2*yt);
+                free(possible_direction);
+                movePlayer(self);
+                fprintf(stderr, "Direction %s\n", self->player->lastInstruction);
+                return self->player->lastInstruction;
+
+            }
+            //C'est un cul de sac tout a déja été exploré
+            self->player->state = 1;
             free(possible_direction);
-            movePlayer(self);
-            fprintf(stderr, "Direction %s\n", self->player->lastInstruction);
-            return self->player->lastInstruction;
-
         }
-        //C'est un cul de sac tout a déja été exploré
-        self->player->state = 1;
-        free(possible_direction);
     }
     if (self->player->state == 1){
         fprintf(stderr, "\n3\n");
@@ -362,15 +568,21 @@ char * think(struct Board * self){
             for (int j = jtt; j <= 1; j+=2){
                 fprintf(stderr, "state 2 i: %d, j: %d, type: %c, cout: %d\n", i, j, get_type(self, x+i, y+j), get_cout(self, x+i, y+j));
                 if (get_type(self, x+i, y+j) != 'W'){
-                    if (x+i == self->unexplorePath->x && y+j == self->unexplorePath->y){
-                        fprintf(stderr, "i: %d, j: %d\n", i, j);
-                        changerLastPositionWithInt(self, i+2*j);
-                        movePlayer(self);
-                        
-                        free(board_unexplorecase_remove_front(self));
-                        self->player->state = 0;
-                        //Retour a la situation initiale et découvrons un nouveau chemin
-                        return self->player->lastInstruction;
+                    if (self->unexplorePath != NULL){
+                        fprintf(stderr, "i: %d, j: %d, next i:  %d, j:%d\n", x+i, y+j, self->unexplorePath->x, self->unexplorePath->y);
+                            if (x+i == self->unexplorePath->x && y+j == self->unexplorePath->y){
+                            fprintf(stderr, "i: %d, j: %d\n", i, j);
+                            changerLastPositionWithInt(self, i+2*j);
+                            movePlayer(self);
+                            
+                            free(board_unexplorecase_remove_front(self));
+                            self->player->state = 0;
+                            //Retour a la situation initiale et découvrons un nouveau chemin
+                            return self->player->lastInstruction;
+                        }
+                    }
+                    else {
+                        fprintf(stderr, "unexplorePath empty, it's not Normal");
                     }
                     int actualCout = get_cout(self, x+i, y+j);
                     if (coutMin > actualCout){

@@ -1,2 +1,2 @@
 #!/bin/sh
-valgrind --leak-check=full ./autoPlayer
+valgrind --leak-check=full -s ./autoPlayer

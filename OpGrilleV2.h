@@ -7,18 +7,9 @@
 #define abs(a)(a<0?-a:a)
 #define max(a,b)(a>=b?a:b)
 #define min(a,b)(a<=b?a:b)
-#define POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y 0
 
 struct Case {
-    int cout;
-    int heuristique;
     char type; // ' ' = vide
-};
-
-struct UnexploreCase {
-    int x;
-    int y;
-    struct UnexploreCase * next;
 };
 
 struct Position {
@@ -38,10 +29,19 @@ struct Player {
     char * lastInstruction;
 };
 
+struct Moves {
+    int dir;
+    struct Moves * next;
+};
+
 struct Board {
     struct Case * data; //Contain al information about plate
-    struct UnexploreCase * unexplorePath;
     struct Player * player;
+    struct Moves * moves;
+    int movesRemaining;
+
+    int step;
+
     int width;
     int height;
 
