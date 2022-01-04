@@ -39,6 +39,7 @@ struct Board {
     struct Player * player;
     struct Moves * moves;
     int movesRemaining;
+    int nbMoveInSameDirection;
 
     int step;
 

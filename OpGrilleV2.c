@@ -27,6 +27,7 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
 
     self->moves = NULL;
     self->movesRemaining = 0;
+    self->nbMoveInSameDirection = 0;
     self->step = 0;
 }
 
@@ -73,9 +74,9 @@ void board_print2(const struct Board * self, const int * self2) {
     {
         if (i % self->width == 0)
         {
-            fprintf(stderr,"W\nW\t");
+            fprintf(stderr,"W\nW");
         }
-        fprintf(stderr,"%d\t",self2[i]);
+        fprintf(stderr,"%d",self2[i]);
         
     }
     fprintf(stderr,"W\nW");
@@ -124,12 +125,16 @@ char get_type(const struct Board * self, const int x, const int y){
 } 
 
 // || x == h-1 && y == w-1 ||x == 0 && y == 0 || x == 0 && y == w-1 
+//Verify if it don't cross wall
 int calculate_heuristique(const int departX, const int departY, const int arriveX, const int arriveY){
     int dx = arriveX - departX;
     int dy = arriveY - departY;
     return abs(dx) + abs(dy);
 }
 
+int calculate_heuristique_with_wall(const struct Board *self, int departX, int departY){
+
+}
 //faire fonctrion pour recalculer le cout de toutes les cases seulement quand trésor trouvé
 
 
@@ -152,25 +157,30 @@ void movePlayer(struct Board * self){
         }
 }
 
-void changerLastPositionWithInt(struct Board * self, const int x){
+char * directionWithInt(const int x){
     switch(x){
         case -2:{ //North
-            self->player->lastInstruction =  "NORTH";
+            return "NORTH";
         }break;
         case -1:{ //WEST
-            self->player->lastInstruction =  "WEST";
+            return "WEST";
         }break;
         case 1:{ //East
-            self->player->lastInstruction =  "EAST";
+            return "EAST";
         }break;
         case 2:{ //South
-            self->player->lastInstruction =  "SOUTH";
+            return "SOUTH";
         }break;
         default:{//North
-            self->player->lastInstruction =  "NORTH";
+            return "NORTH";
         }
     }
 }
+
+void changerLastPositionWithInt(struct Board * self, const int x){
+    self->player->lastInstruction = directionWithInt(x);
+}
+
 int lastPositionToInt(struct Board * self){
     switch(self->player->lastInstruction[0]){
             case 'N':{
@@ -191,7 +201,9 @@ int lastPositionToInt(struct Board * self){
         }
 }
 
-int heuristique_for_direction(struct Board * self, int posX, int posY, int * alreadyView){
+//bonus if it decrease the longest difference
+//improve direction choice
+int heuristique_for_direction(struct Board * self, int posX, int posY, int * alreadyView, int * smokeBoard){
     int minHeuristique = 1000000;
     for (int i =-1; i <= 1; i++){
         int jtt = i==0?-1:0;
@@ -204,12 +216,18 @@ int heuristique_for_direction(struct Board * self, int posX, int posY, int * alr
             }
             char typeCase = get_type(self, posX+i, posY+j);
             if (typeCase == ' '){
+                if (smokeBoard[(posX+i)+(posY+j)*self->width] == 0){
+                    continue;
+                }
                 int k = calculate_heuristique(posX+i, posY+j, self->tresorX, self->tresorY);
                 minHeuristique = min(minHeuristique, k);
             }
+            else if (typeCase == 'T'){
+                minHeuristique = 0;
+            }
             else if (typeCase != 'W'){
                 alreadyView[(posX+i)+(posY+j)*self->width] = 1;
-                int k = heuristique_for_direction(self, posX+i, posY+j, alreadyView)+1;
+                int k = heuristique_for_direction(self, posX+i, posY+j, alreadyView, smokeBoard)+1;
                 alreadyView[(posX+i)+(posY+j)*self->width] = 0;
                 minHeuristique = min(minHeuristique, k);
             }
@@ -234,6 +252,7 @@ int popFrontMoves(struct Board * self){
     int moveDir = self->moves->dir;
     free(self->moves);
     self->moves = next;
+    self->movesRemaining--;
     return moveDir;
 }
 
@@ -311,6 +330,25 @@ void calclateReturningPath(struct Board * self){
     free(alreadyView);
 }
 
+void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int isFirst){
+    if (x >= self->width || x < 0 || y >= self->height || y < 0)
+    {
+        return;
+    }
+    if (smokeBoard[x+y*self->width] == 1){
+        return;
+    }
+    if (get_type(self, x, y) != ' ' && !isFirst){
+        return ;
+    }
+    smokeBoard[x+y*self->width] = 1;
+    propagateSmoke(self, smokeBoard, x+1, y, 0);
+    propagateSmoke(self, smokeBoard, x-1, y, 0);
+    propagateSmoke(self, smokeBoard, x, y+1, 0);
+    propagateSmoke(self, smokeBoard, x, y-1, 0);
+
+}
+
 char * think(struct Board * self){
     int x = self->player->x;
     int y = self->player->y;
@@ -319,6 +357,7 @@ char * think(struct Board * self){
     fprintf(stderr, "x : %d,   y:%d \n", x, y);
     raiseErrorIfOutOfBounds(self, x, y);
     if (self->movesRemaining != 0){
+        fprintf(stderr, "Moves left: %d\n", self->movesRemaining);
         changerLastPositionWithInt(self, popFrontMoves(self));
         movePlayer(self);
         return self->player->lastInstruction;
@@ -333,6 +372,16 @@ char * think(struct Board * self){
     int * alreadyView = calloc(self->width * self->height, sizeof(int));
     alreadyView[x+y*self->width] = 1;
 
+    //TODO:Erreur lorsqu'on connait toutes lers cases autour d'une case vide elle est supprimé
+    int * smokeBoard = calloc(self->width * self->height, sizeof(int));
+    //verifier si autour du trésor c'est libre sinon allez a la case vide la plus proche ou avant un cout positif
+    propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1);
+
+    //board_print2(self, smokeBoard);
+
+    int dx = self->tresorX - x;
+    int dy = self->tresorY - y;
+
     for (int i =-1; i <= 1; i++){
         int jtt = i==0?-1:0;
         for (int j = jtt; j <= 1; j+=2){
@@ -343,11 +392,23 @@ char * think(struct Board * self){
                 calclateReturningPath(self);
             }
             else if (get_type(self, x+i, y+j) != 'W'){
-                int heuristiqueForDirection = heuristique_for_direction(self, x+i, y+j, alreadyView);
-                if (lastPositionToInt(self) == i+2*j){
-                    heuristiqueForDirection = heuristiqueForDirection-3;
+                int heuristiqueForDirection = heuristique_for_direction(self, x+i, y+j, alreadyView, smokeBoard);
+                //Ajoute une priorité sur la ligne droite a partir du deuxième déplacement
+                if (lastPositionToInt(self) != i+2*j || self->nbMoveInSameDirection%2 == 0){
+                    heuristiqueForDirection = heuristiqueForDirection+2;
                 }
-                fprintf(stderr, "Heuristique i:%d, j:%d, h:%d\n", x+i, y+j, heuristiqueForDirection);
+                if (abs(dx) < abs(dy)){
+                    if(abs(dy-j) >= abs(dy)){
+                        heuristiqueForDirection = heuristiqueForDirection+1;
+                    }
+
+                }
+                if (abs(dx) > abs(dy)){
+                    if(abs(dx-i) >= abs(dx)){
+                        heuristiqueForDirection = heuristiqueForDirection+1;
+                    }
+                }
+                fprintf(stderr, "Heuristique dir: %s, i:%d, j:%d, h:%d\n", directionWithInt(i+2*j), x+i, y+j, heuristiqueForDirection);
                 if (minHeuristique > heuristiqueForDirection){
                     minHeuristique = heuristiqueForDirection;
                     numberMinDir = i+2*j;
@@ -356,23 +417,17 @@ char * think(struct Board * self){
         }
     }
     free(alreadyView);
-    fprintf(stderr, "Chosen direction: %d\n", numberMinDir);
+    if (lastPositionToInt(self) == numberMinDir){
+        self->nbMoveInSameDirection++;
+    }
+    else {
+        self->nbMoveInSameDirection = 0;
+    }
+    fprintf(stderr, "Nb move in the same line: %d\n", self->nbMoveInSameDirection);
+    fprintf(stderr, "Last direction: %s\n", self->player->lastInstruction);
     changerLastPositionWithInt(self, numberMinDir);
     fprintf(stderr, "Chosen direction: %s\n", self->player->lastInstruction);
     movePlayer(self);
     return self->player->lastInstruction;
-    
-
-    //Quatre état cherche/demi-tour/rebrousser chemin/petit pousset
-
-    //Si aucune issu dans le sens inverse du dernier choix (empeche de prendre le chemin déja visité si croisement.)
-    //Supprimer la possibilité de la pile
-
-
-    return "NORTH";
-    
-
 
 }
-//si on touche un bord horizontal ou vertical tout ce qui est du coté oposé est inutile a vérifier
-//si on est a 1 case avant le mur cela ne sert a rien d'aller voir ,(on gagne deux déplacement a chaque fois)
