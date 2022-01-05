@@ -12,16 +12,6 @@ struct Case {
     char type; // ' ' = vide
 };
 
-struct Position {
-    int x;
-    int y;
-};
-
-struct PossiblePosition{
-    struct Position ** pos;
-    int n;
-};
-
 struct Player {
     int x;
     int y;
