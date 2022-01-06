@@ -33,7 +33,7 @@ done <<<$(cat out.txt)
 
 for (( i=0; i < ${#seed[*]}; i++ ))
 do 
-	echo "./labyrinth-server -s ${seed[i]} ${1} ${2}"
+	#echo "./labyrinth-server -s ${seed[i]} ${1} ${2}"
 	./labyrinth-server -s ${seed[i]} $1 $2 >> /dev/null 2>> out.txt
 	check_output
 	rm out.txt
@@ -56,12 +56,13 @@ cp=200
 
 while [ "$cp" != 0 ]
 do 
-	echo "Test restants: ${cp} ./labyrinth-server ${1} ${2}"
+	echo -en "\rTest restants: ${cp} ./labyrinth-server ${1} ${2}"
 	./labyrinth-server $1 $2 >> /dev/null 2>> out.txt
 	check_output
 	rm out.txt
 	cp=$(($cp-1))
 done
+echo ""
 echo "${1} algo win ${firstCount} times"
 echo "${2} algo win ${secondCount} times"
 if [ $firstCount -gt $secondCount ]
