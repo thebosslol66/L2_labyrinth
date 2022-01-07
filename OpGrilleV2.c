@@ -254,6 +254,12 @@ int heuristique_for_direction(struct Board * self, int posX, int posY, int * alr
     return minHeuristique;
 }
 
+/**
+ * @brief Add a move to the structure board
+ *
+ * @param self the board of the game
+ * @param dir the diretion to add to the structure
+**/
 void addFrontMoves(struct Board * self, const int dir){
     struct Moves * next = self->moves;
     struct Moves * node = malloc(sizeof(struct Moves));
@@ -263,6 +269,11 @@ void addFrontMoves(struct Board * self, const int dir){
     self->movesRemaining++;
 }
 
+/**
+ * @brief Get the first move from board and delete it in the list.
+ *
+ * @param self the board of the game
+**/
 int popFrontMoves(struct Board * self){
     assert(self->moves != NULL);
 
@@ -274,6 +285,11 @@ int popFrontMoves(struct Board * self){
     return moveDir;
 }
 
+/**
+ * @brief Delete all moves present in the board
+ *
+ * @param self the board of the game
+**/
 void deleteMoves(struct Board * self){
     struct Moves * next = NULL;
     struct Moves * node = self->moves;

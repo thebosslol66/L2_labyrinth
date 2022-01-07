@@ -5,3 +5,8 @@ gcc -Wall -g -O2 -std=c99 -o autoPlayer autoPlayer.c OpGrilleV2.c
 
 Ex:
 ./launch.sh ./autoPlayer ./labyrinth-10
+
+#####Make Documentation
+run
+
+doxygen def/doxygen.def
