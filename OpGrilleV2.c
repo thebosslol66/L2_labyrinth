@@ -260,7 +260,6 @@ int calculate_heuristique_with_wall(const struct Board *self, int departX, int d
     }
     return min(partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymax, arriveX, arriveY), partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymin, arriveX, arriveY));
 }
-//faire fonctrion pour recalculer le cout de toutes les cases seulement quand trésor trouvé
 
 
 void movePlayer(struct Board * self){
@@ -348,7 +347,7 @@ int heuristique_for_direction(struct Board * self, int posX, int posY, int * alr
                 if (smokeBoard[(posX+i)+(posY+j)*self->width] == 0){
                     continue;
                 }
-                int k = calculate_heuristique(posX+i, posY+j, self->tresorX, self->tresorY);
+                int k = calculate_heuristique_with_wall(self, posX+i, posY+j, self->tresorX, self->tresorY);
                 minHeuristique = min(minHeuristique, k);
             }
             else if (typeCase == 'T'){

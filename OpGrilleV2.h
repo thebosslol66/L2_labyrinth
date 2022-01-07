@@ -31,7 +31,7 @@ struct Board {
     int movesRemaining;
     int nbMoveInSameDirection;
 
-    // points calcul heuristique
+    // 4 points calcul heuristique
     int xmin;
     int xmax;
     int ymin;
