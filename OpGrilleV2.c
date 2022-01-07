@@ -26,10 +26,10 @@ void board_create(struct Board *self, int width, int height, int x, int y, int x
     self->player->state = 0;
     self->player->lastInstruction = " ";
 
-    self->xmax = x + 1;
-    self->xmin = x - 1;
-    self->ymax = y + 1;
-    self->ymin = y - 1;
+    self->xmax = x + 2;
+    self->xmin = x - 2;
+    self->ymax = y + 2;
+    self->ymin = y - 2;
 
     self->moves = NULL;
     self->movesRemaining = 0;
@@ -175,7 +175,7 @@ bool is_there_wall_recto(const struct Board *self, int departX, int departY, int
         }
     }else
     {
-        for (int i = departX; i > dy; i--)
+        for (int i = departY; i > dy; i--)
         {
             if(self->data[(departX + dx) + (i*self->width)].type == 'W')
             {
@@ -194,12 +194,12 @@ bool is_there_wall_verso(const struct Board *self, int departX, int departY, int
         {
             if(self->data[departX + (i*self->width)].type == 'W')
             {
-                return = true;
+                return true;
             }
         }
     }else
     {
-        for (int i = departX; i > dy; i--)
+        for (int i = departY; i > self->tresorY; i--)
         {
             if(self->data[departX + (i*self->width)].type == 'W')
             {
@@ -252,7 +252,23 @@ int calculate_heuristique_with_wall(const struct Board *self, int departX, int d
     int dy = self->tresorY - departY;
     if ((dx > 0 && dy > 0) || (dx < 0 && dy < 0))
     {
+        if (self->xmax > self->width || self->ymin < 0)
+        {
+            return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymax, arriveX, arriveY);
+        }
+        if (self->xmin < 0 || self->ymax > self->height)
+        {
+            return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymin, arriveX, arriveY);
+        }
         return min(partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymin, arriveX, arriveY), partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymax, arriveX, arriveY));
+    }
+    if (self->xmax > self->width ||  self->ymax > self->height)
+    {
+        return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymin, arriveX, arriveY);
+    }
+    if (self->xmin < 0 || self->ymin < 0)
+    {
+        return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymax, arriveX, arriveY);
     }
     return min(partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymax, arriveX, arriveY), partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymin, arriveX, arriveY));
 }
