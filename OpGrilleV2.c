@@ -194,7 +194,7 @@ bool is_there_wall_verso(const struct Board *self, int departX, int departY, int
         {
             if(self->data[departX + (i*self->width)].type == 'W')
             {
-                return = true;
+                return true;
             }
         }
     }else
@@ -490,7 +490,7 @@ char * think(struct Board * self){
         return self->player->lastInstruction;
     }
     fprintf(stderr, "No more moves, preparing new moves.\n");
-    //board_print(self);
+    board_print(self);
     //evaluer toutes les cases autours
     int minHeuristique = 1000000;
     int numberMinDir = 0;
