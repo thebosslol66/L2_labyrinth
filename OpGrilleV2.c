@@ -80,9 +80,9 @@ void board_print2(const struct Board * self, const int * self2) {
     {
         if (i % self->width == 0)
         {
-            fprintf(stderr,"W\nW");
+            fprintf(stderr,"W\nW\t");
         }
-        fprintf(stderr,"%d",self2[i]);
+        fprintf(stderr,"%d\t",self2[i]);
         
     }
     fprintf(stderr,"W\nW");
@@ -142,42 +142,40 @@ int calculate_heuristique(const int departX, const int departY, const int arrive
 }
 
 bool is_there_wall_recto(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    int dx = self->tresorX - departX;
-    if (dx > 0)
+    if (arriveX > departX)
     {
-        for (int i = departX; i < dx; i++)
+        for (int i = departX; i < arriveX; i++)
         {
-            if(self->data[i + (departY*self->width)].type == 'W')
+            if(get_type(self, i, departY) == 'W')
             {
                 return true;
             }
         }
     }else
     {
-        for (int i = departX; i > dx; i--)
+        for (int i = departX; i > arriveX; i--)
         {
-            if(self->data[i + (departY*self->width)].type == 'W')
+            if(get_type(self, i, departY) == 'W')
             {
                 return true;
             }
         }
     }
 
-    int dy = self->tresorY - departY;
-    if (dy > 0)
+    if (arriveY > departY)
     {
-        for (int i = departY; i < dy; i++)
+        for (int i = departY; i < arriveY; i++)
         {
-            if(self->data[(departX + dx) + (i*self->width)].type == 'W')
+            if(get_type(self, arriveX, i) == 'W')
             {
                 return true;
             }
         }
     }else
     {
-        for (int i = departY; i > dy; i--)
+        for (int i = departY; i > arriveY; i--)
         {
-            if(self->data[(departX + dx) + (i*self->width)].type == 'W')
+            if(get_type(self, arriveX, i) == 'W')
             {
                 return true;
             }
@@ -187,42 +185,40 @@ bool is_there_wall_recto(const struct Board *self, int departX, int departY, int
 }
 
 bool is_there_wall_verso(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    int dy = self->tresorY - departY;
-    if (dy > 0)
+    if (arriveY > departY)
     {
-        for (int i = departY; i < dy; i++)
+        for (int i = departY; i < arriveY; i++)
         {
-            if(self->data[departX + (i*self->width)].type == 'W')
+            if(get_type(self, departX, i) == 'W')
             {
                 return true;
             }
         }
     }else
     {
-        for (int i = departY; i > self->tresorY; i--)
+        for (int i = departY; i > arriveY; i--)
         {
-            if(self->data[departX + (i*self->width)].type == 'W')
+            if(get_type(self, departX, i) == 'W')
             {
                 return true;
             }
         }
     }
-    
-    int dx = self->tresorX - departX;
-    if (dx > 0)
+
+    if (arriveX > departX)
     {
-        for (int i = departX; i < dx; i++)
+        for (int i = departX; i < arriveX; i++)
         {
-            if(self->data[i + ((departY + dy)*self->width)].type == 'W')
+            if(get_type(self, i, arriveY) == 'W')
             {
                 return true;
             }
         }
     }else
     {
-        for (int i = departX; i > dx; i--)
+        for (int i = departX; i > arriveX; i--)
         {
-            if(self->data[i + ((departY + dy)*self->width)].type == 'W')
+            if(get_type(self, i, arriveY) == 'W')
             {
                 return true;
             }
@@ -441,7 +437,7 @@ void createPath(struct Board * self, int * alreadyView){
     fprintf(stderr, "Moves to return #%d \n", self->movesRemaining);
 
 }
-void coutCaseToGoBack(struct Board *self, int posX, int posY, const int cost, int * alreadyView){
+void coutCaseToGoBack(struct Board *self, int posX, int posY, int cost, int * alreadyView){
     for (int i =-1; i <= 1; i++){
         int jtt = i==0?-1:0;
         for (int j = jtt; j <= 1; j+=2){
@@ -470,7 +466,7 @@ void calclateReturningPath(struct Board * self){
     free(alreadyView);
 }
 
-void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int isFirst){
+void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int cost, const int isFirst){
     if (x >= self->width || x < 0 || y >= self->height || y < 0)
     {
         return;
@@ -484,12 +480,13 @@ void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, co
     if (self->data[x+(y*self->width)].hasVisited == 1){
         return ;
     }
-    smokeBoard[x+y*self->width] = 1;
-    propagateSmoke(self, smokeBoard, x+1, y, 0);
-    propagateSmoke(self, smokeBoard, x-1, y, 0);
-    propagateSmoke(self, smokeBoard, x, y+1, 0);
-    propagateSmoke(self, smokeBoard, x, y-1, 0);
-
+    if (smokeBoard[x+y*self->width] > cost || smokeBoard[x+y*self->width] == 0){
+        smokeBoard[x+y*self->width] = cost;
+        propagateSmoke(self, smokeBoard, x+1, y, cost+1, 0);
+        propagateSmoke(self, smokeBoard, x-1, y, cost+1, 0);
+        propagateSmoke(self, smokeBoard, x, y+1, cost+1, 0);
+        propagateSmoke(self, smokeBoard, x, y-1, cost+1, 0);
+    }
 }
 
 char * think(struct Board * self){
@@ -518,9 +515,9 @@ char * think(struct Board * self){
     //TODO:Erreur lorsqu'on connait toutes lers cases autour d'une case vide elle est supprimé
     int * smokeBoard = calloc(self->width * self->height, sizeof(int));
     //verifier si autour du trésor c'est libre sinon allez a la case vide la plus proche ou avant un cout positif
-    propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1);
+    propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1, 1);
 
-    //board_print2(self, smokeBoard);
+    board_print2(self, smokeBoard);
 
     int dx = self->tresorX - x;
     int dy = self->tresorY - y;
@@ -560,6 +557,7 @@ char * think(struct Board * self){
         }
     }
     free(alreadyView);
+    free(smokeBoard);
     if (lastPositionToInt(self) == numberMinDir){
         self->nbMoveInSameDirection++;
     }
