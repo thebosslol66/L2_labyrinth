@@ -208,8 +208,19 @@ int lastPositionToInt(struct Board * self){
         }
 }
 
-//bonus if it decrease the longest difference
-//improve direction choice
+/**
+ * Get the best cost from the position to the tresure.
+ *
+ * Calculate all move cost to all cases from the position.
+ * If we don't have information about the case we use his value in the smokeBoad.
+ * We return the best value to get the tresure.
+ *
+ * @param self the board of the game
+ * @param posX the position in x for calculate the minimum possible move to reach treasure
+ * @param posY the position in y for calculate the minimum possible move to reach treasure
+ * @param alreadyView store cases already visited to avoid infinite loop
+ * @param smokeBoard list with all unvisited cases with his move cost to tresure
+**/
 int heuristique_for_direction(struct Board * self, int posX, int posY, int * alreadyView, int * smokeBoard){
     int minHeuristique = 1000000;
     for (int i =-1; i <= 1; i++){
@@ -274,6 +285,15 @@ void deleteMoves(struct Board * self){
     self->movesRemaining = 0;
 }
 
+/**
+ * Create a path between treasure and exit.
+ *
+ * It use a board already fullfilled and follow cases wich cost the less mouves to return to exit.
+ * It record each moves in attribute moves in board for use it later.
+ *
+ * @param self the board of the game
+ * @param alreadyView the board filled with mouve cost
+**/
 void createPath(struct Board * self, int * alreadyView){
     int actualPosX = self->sortieX;
     int actualPosY = self->sortieY;
@@ -308,6 +328,18 @@ void createPath(struct Board * self, int * alreadyView){
     fprintf(stderr, "Moves to return #%d \n", self->movesRemaining);
 
 }
+
+/**
+ * Add cost for all cases we discover and put it into a list.
+ *
+ * For every cases add the cost to go to posX and posY with the less moves.
+ *
+ * @param self the board of the game
+ * @param posX the position in x of the case to add a move cost
+ * @param posY the position in y of the case to add a move cost
+ * @param cost the cost to add to the case
+ * @param alreadyView the board to fill with mouve cost
+**/
 void coutCaseToGoBack(struct Board *self, int posX, int posY, int cost, int * alreadyView){
     for (int i =-1; i <= 1; i++){
         int jtt = i==0?-1:0;
@@ -329,6 +361,14 @@ void coutCaseToGoBack(struct Board *self, int posX, int posY, int cost, int * al
         }
     }
 }
+/**
+ * Calculate the best path from treasure to the exit.
+ *
+ * Create a new empty board and fill with move cost every path we disdcover from the exit position.
+ * Then create a path and put it in the board folling the lowest move cost from the treasure.
+ *
+ * @param self the board of the game
+**/
 void calclateReturningPath(struct Board * self){
     int * alreadyView = calloc(self->width * self->height, sizeof(int));
     alreadyView[self->tresorX+self->tresorY*self->width] = 1 ;
@@ -337,7 +377,20 @@ void calclateReturningPath(struct Board * self){
     free(alreadyView);
 }
 
-void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int cost, const int isFirst){
+/**
+ * Put in smokeBoard the move cost from each case we don't visit.
+ *
+ * We begin in the fist position and put a 1 move, then for cases around put a cost of 1 more move.
+ * We do this for all cases not visited and wich are not wall.
+ *
+ * @param self the board of the game
+ * @param smokeBoard the board to fullfill with the cost to the position
+ * @param x the position in x of the case to add a move cost
+ * @param y the position in y of the case to add a move cost
+ * @param cost the cost of the case
+ *
+**/
+void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, const int y, const int cost){
     if (x >= self->width || x < 0 || y >= self->height || y < 0)
     {
         return;
@@ -352,12 +405,22 @@ void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, co
         return ;
     }
     smokeBoard[x+y*self->width] = cost;
-    propagateSmoke(self, smokeBoard, x+1, y, cost+1, 0);
-    propagateSmoke(self, smokeBoard, x-1, y, cost+1, 0);
-    propagateSmoke(self, smokeBoard, x, y+1, cost+1, 0);
-    propagateSmoke(self, smokeBoard, x, y-1, cost+1, 0);
+    propagateSmoke(self, smokeBoard, x+1, y, cost+1);
+    propagateSmoke(self, smokeBoard, x-1, y, cost+1);
+    propagateSmoke(self, smokeBoard, x, y+1, cost+1);
+    propagateSmoke(self, smokeBoard, x, y-1, cost+1);
 }
 
+/** 
+ * Calculate the best move to do with actual board
+ *
+ * If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
+ * We made aa smal priority for case wich reduce the longest distance between dx and dy.
+ * If we find the tresure we calculate the path to return to initial position.
+ * If we have a path to follow, we use it in priority. It is use to return to entry.
+ * @param self actual board for the game
+ * @return string for thr best next direction
+**/
 char * think(struct Board * self){
     int x = self->player->x;
     int y = self->player->y;
@@ -377,14 +440,11 @@ char * think(struct Board * self){
     int minHeuristique = 1000000;
     int numberMinDir = 0;
 
-    //create a board for memorise case which are already viewed
     int * alreadyView = calloc(self->width * self->height, sizeof(int));
     alreadyView[x+y*self->width] = 1;
 
-    //TODO:Erreur lorsqu'on connait toutes lers cases autour d'une case vide elle est supprimé
     int * smokeBoard = calloc(self->width * self->height, sizeof(int));
-    //verifier si autour du trésor c'est libre sinon allez a la case vide la plus proche ou avant un cout positif
-    propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1, 1);
+    propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1);
 
     //board_print2(self, smokeBoard);
 
@@ -401,7 +461,7 @@ char * think(struct Board * self){
                 calclateReturningPath(self);
             }
             else if (get_type(self, x+i, y+j) != 'W'){
-                int heuristiqueForDirection = heuristique_for_direction(self, x+i, y+j, alreadyView, smokeBoard) * 2;
+                int heuristiqueForDirection = heuristique_for_direction(self, x+i, y+j, alreadyView, smokeBoard);
                 //Ajoute une priorité sur la ligne droite a partir du deuxième déplacement
                 if (lastPositionToInt(self) != i+2*j){
                     heuristiqueForDirection = heuristiqueForDirection+2;
