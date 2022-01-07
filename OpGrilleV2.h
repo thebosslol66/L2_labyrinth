@@ -10,6 +10,7 @@
 
 struct Case {
     char type; // ' ' = vide
+    int hasVisited;
 };
 
 struct Player {
