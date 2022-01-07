@@ -209,7 +209,7 @@ int lastPositionToInt(struct Board * self){
 }
 
 /**
- * Get the best cost from the position to the tresure.
+ * @brief Get the best cost from the position to the tresure.
  *
  * Calculate all move cost to all cases from the position.
  * If we don't have information about the case we use his value in the smokeBoad.
@@ -286,7 +286,7 @@ void deleteMoves(struct Board * self){
 }
 
 /**
- * Create a path between treasure and exit.
+ * @brief Create a path between treasure and exit.
  *
  * It use a board already fullfilled and follow cases wich cost the less mouves to return to exit.
  * It record each moves in attribute moves in board for use it later.
@@ -330,7 +330,7 @@ void createPath(struct Board * self, int * alreadyView){
 }
 
 /**
- * Add cost for all cases we discover and put it into a list.
+ * @brief Add cost for all cases we discover and put it into a list.
  *
  * For every cases add the cost to go to posX and posY with the less moves.
  *
@@ -362,7 +362,7 @@ void coutCaseToGoBack(struct Board *self, int posX, int posY, int cost, int * al
     }
 }
 /**
- * Calculate the best path from treasure to the exit.
+ * @brief Calculate the best path from treasure to the exit.
  *
  * Create a new empty board and fill with move cost every path we disdcover from the exit position.
  * Then create a path and put it in the board folling the lowest move cost from the treasure.
@@ -378,7 +378,7 @@ void calclateReturningPath(struct Board * self){
 }
 
 /**
- * Put in smokeBoard the move cost from each case we don't visit.
+ * @brief Put in smokeBoard the move cost from each case we don't visit.
  *
  * We begin in the fist position and put a 1 move, then for cases around put a cost of 1 more move.
  * We do this for all cases not visited and wich are not wall.
@@ -412,7 +412,7 @@ void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, co
 }
 
 /** 
- * Calculate the best move to do with actual board
+ * @brief Calculate the best move to do with actual board
  *
  * If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
  * We made aa smal priority for case wich reduce the longest distance between dx and dy.

@@ -1,0 +1,4328 @@
+AutoGen Definitions dummy;
+struct = {
+  cp-id     = 'struct_board';
+  cp-name   = 'Board';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a78abd688d9bbbfd4d6cc6bd4cf4c4fbc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Case *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'data';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '42';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1abf0180ce6dcdbce4c53978bc8865c01c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct UnexploreCase *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'unexplorePath';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '43';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a4ff1b65e79c152b6cdc6b91dd221f9e5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Player *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'player';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '44';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a2474a5474cbff19523a51eb1de01cda4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'width';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '45';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        sec-mem-ref-line = '187';
+        sec-mem-ref-name = 'calculate_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        sec-mem-ref-line = '11';
+        sec-mem-ref-name = 'main';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a911f39768d70f6d8105835b40924ded5';
+        sec-mem-ref-line = '3';
+        sec-mem-ref-name = 'raiseErrorIfOutOfBounds';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1ad12fc34ce789bce6c8a05d8a17138534';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'height';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '46';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        sec-mem-ref-line = '187';
+        sec-mem-ref-name = 'calculate_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        sec-mem-ref-line = '11';
+        sec-mem-ref-name = 'main';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a911f39768d70f6d8105835b40924ded5';
+        sec-mem-ref-line = '3';
+        sec-mem-ref-name = 'raiseErrorIfOutOfBounds';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a4429f6370a431217c8a346a9803d8ac7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'tresorX';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a701e5639924dcfe59ff78e7f3fd56ea3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'tresorY';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '49';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1ae65b281207edbe81ab93b9c7724995ba';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'sortieX';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '51';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a30c7ec4761707b2312ec8b77af1d94bc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'sortieY';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '52';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a16ae0d4b739b30845423243f3e53441f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Moves *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'moves';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '31';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1ab17944d21021214bc60605be5ec72cc1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'movesRemaining';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '32';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a23db1e5a2bccc8f625efbe70a340f6ed';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'nbMoveInSameDirection';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '33';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a883020d4284bd039cbac9574b896c948';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'xmin';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '36';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a3bd9aad0bd6c391604e7a27d57c21d3f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'xmax';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '37';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a8f91ffd86aa304f2ca807ff84fa2fe87';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ymin';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '38';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1a740732a581a525ffdac6d4124d517d0e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ymax';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '39';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_board_1abc16e65f240ed0c8f3e876e8732c0a33';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'step';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '41';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '41';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 4;
+        node-label = 'UnexploreCase';
+        node-link = {
+          node-link-id = 'struct_unexplore_case';
+        };
+        node-child = {
+          child-id = '4';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+next
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Moves';
+        node-link = {
+          node-link-id = 'struct_moves';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+next
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 5;
+        node-label = 'Case';
+        node-link = {
+          node-link-id = 'struct_case';
+        };
+      }; /* node */
+      node = {
+        node-id    = 3;
+        node-label = 'Player';
+        node-link = {
+          node-link-id = 'struct_player';
+        };
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Board';
+        node-link = {
+          node-link-id = 'struct_board';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+moves
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '3';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+player
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '4';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+unexplorePath
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '5';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+data
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_case';
+  cp-name   = 'Case';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_case_1a1f00a15029cff2f82b9ba14843aa9c38';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'cout';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_case_1aa15cfd06df086a8586c91142a9047a9b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'heuristique';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '14';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_case_1aff17911edc8208aa8ddb1c7c52c78389';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+char
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'type';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '15';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_case_1a184fb0cdba5c2765984041eab386c396';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'hasVisited';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '12';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_moves';
+  cp-name   = 'Moves';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_moves_1a851cf68c8f607573c1a5e987784c83f6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dir';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '24';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a5cb78f012808b0614240eff1e971cac7';
+        sec-mem-ref-line = '257';
+        sec-mem-ref-name = 'addFrontMoves';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a1a74d1001878ab5da4d3f764edcfd207';
+        sec-mem-ref-line = '266';
+        sec-mem-ref-name = 'popFrontMoves';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_moves_1a16b4b5aaf7101d85259cb955ee811e0d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Moves *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'next';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      sec-mem-desc-line = '25';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a5cb78f012808b0614240eff1e971cac7';
+        sec-mem-ref-line = '257';
+        sec-mem-ref-name = 'addFrontMoves';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a09197a0b892e2899fef97bf50648183c';
+        sec-mem-ref-line = '277';
+        sec-mem-ref-name = 'deleteMoves';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a1a74d1001878ab5da4d3f764edcfd207';
+        sec-mem-ref-line = '266';
+        sec-mem-ref-name = 'popFrontMoves';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+  cp-fileline  = '23';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Moves';
+        node-link = {
+          node-link-id = 'struct_moves';
+        };
+        node-child = {
+          child-id = '1';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+next
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_player';
+  cp-name   = 'Player';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_player_1a6150e0515f7202e2fb518f7206ed97dc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'x';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1abdb404e7f9b67723389f968c053784c3';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'board_create';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+        sec-mem-ref-line = '187';
+        sec-mem-ref-name = 'changerLastPositionWithInt';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1aee868e394992544a2fc638e09622acd0';
+        sec-mem-ref-line = '167';
+        sec-mem-ref-name = 'directionWithInt';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1aec0980400927a125b7951a6ea479511f';
+        sec-mem-ref-line = '128';
+        sec-mem-ref-name = 'get_type';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a911f39768d70f6d8105835b40924ded5';
+        sec-mem-ref-line = '3';
+        sec-mem-ref-name = 'raiseErrorIfOutOfBounds';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_player_1a0a2f84ed7838f07779ae24c5a9086d33';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'y';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '36';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1abdb404e7f9b67723389f968c053784c3';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'board_create';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1aec0980400927a125b7951a6ea479511f';
+        sec-mem-ref-line = '128';
+        sec-mem-ref-name = 'get_type';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_v2_8c_1a911f39768d70f6d8105835b40924ded5';
+        sec-mem-ref-line = '3';
+        sec-mem-ref-name = 'raiseErrorIfOutOfBounds';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_player_1a89f234133d3efe315836311cbf21c64b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'state';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '37';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_player_1a6c5b41a6a1bb25f83012b22f40da6be1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'lastInstruction';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '38';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '34';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_position';
+  cp-name   = 'Position';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_position_1a6150e0515f7202e2fb518f7206ed97dc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'x';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '25';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        sec-mem-ref-line = '307';
+        sec-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        sec-mem-ref-line = '423';
+        sec-mem-ref-name = 'think';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_position_1a0a2f84ed7838f07779ae24c5a9086d33';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'y';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '26';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        sec-mem-ref-line = '307';
+        sec-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        sec-mem-ref-line = '423';
+        sec-mem-ref-name = 'think';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '24';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_possible_position';
+  cp-name   = 'PossiblePosition';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_possible_position_1ac90fc8ed5b13eb9a53d65da9927ce70f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Position **
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'pos';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '30';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        sec-mem-ref-line = '307';
+        sec-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_possible_position_1a76f11d9a0a47b94f72c2d0e77fb32240';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'n';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '31';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        sec-mem-ref-line = '307';
+        sec-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '29';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'Position';
+        node-link = {
+          node-link-id = 'struct_position';
+        };
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'PossiblePosition';
+        node-link = {
+          node-link-id = 'struct_possible_position';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+pos
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'struct_unexplore_case';
+  cp-name   = 'UnexploreCase';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_unexplore_case_1a6150e0515f7202e2fb518f7206ed97dc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'x';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '19';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1abdb404e7f9b67723389f968c053784c3';
+        sec-mem-ref-line = '35';
+        sec-mem-ref-name = 'board_create';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a6bba16d6cc684e88c3de5f32255f36c8';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'board_unexplorecase_push_front';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        sec-mem-ref-line = '187';
+        sec-mem-ref-name = 'calculate_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+        sec-mem-ref-line = '230';
+        sec-mem-ref-name = 'changerLastPositionWithInt';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a9981f894015df159a951b2804601d005';
+        sec-mem-ref-line = '164';
+        sec-mem-ref-name = 'get_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1ae9da9d144c0851842fe1d2156e6d1e19';
+        sec-mem-ref-line = '152';
+        sec-mem-ref-name = 'get_heuristique';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aec0980400927a125b7951a6ea479511f';
+        sec-mem-ref-line = '172';
+        sec-mem-ref-name = 'get_type';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a95e2783122fbfc2fedcc0641f69ce7aa';
+        sec-mem-ref-line = '250';
+        sec-mem-ref-name = 'get_type_smoke';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+        sec-mem-ref-line = '258';
+        sec-mem-ref-name = 'propagateSmoke';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1ab35021862023072f6e3894a60a070fa2';
+        sec-mem-ref-line = '161';
+        sec-mem-ref-name = 'set_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1af05578cadd7370cf7a79fce992b217cc';
+        sec-mem-ref-line = '148';
+        sec-mem-ref-name = 'set_heuristique';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        sec-mem-ref-line = '423';
+        sec-mem-ref-name = 'think';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_unexplore_case_1a0a2f84ed7838f07779ae24c5a9086d33';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'y';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '20';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1abdb404e7f9b67723389f968c053784c3';
+        sec-mem-ref-line = '35';
+        sec-mem-ref-name = 'board_create';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a6bba16d6cc684e88c3de5f32255f36c8';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'board_unexplorecase_push_front';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        sec-mem-ref-line = '187';
+        sec-mem-ref-name = 'calculate_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a9981f894015df159a951b2804601d005';
+        sec-mem-ref-line = '164';
+        sec-mem-ref-name = 'get_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1ae9da9d144c0851842fe1d2156e6d1e19';
+        sec-mem-ref-line = '152';
+        sec-mem-ref-name = 'get_heuristique';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1aec0980400927a125b7951a6ea479511f';
+        sec-mem-ref-line = '172';
+        sec-mem-ref-name = 'get_type';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a95e2783122fbfc2fedcc0641f69ce7aa';
+        sec-mem-ref-line = '250';
+        sec-mem-ref-name = 'get_type_smoke';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+        sec-mem-ref-line = '258';
+        sec-mem-ref-name = 'propagateSmoke';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1ab35021862023072f6e3894a60a070fa2';
+        sec-mem-ref-line = '161';
+        sec-mem-ref-name = 'set_cout';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1af05578cadd7370cf7a79fce992b217cc';
+        sec-mem-ref-line = '148';
+        sec-mem-ref-name = 'set_heuristique';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        sec-mem-ref-line = '423';
+        sec-mem-ref-name = 'think';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'struct_unexplore_case_1a0f7af7aa6de59df72fff7c4b7e444f99';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+struct UnexploreCase *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'next';
+      sec-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      sec-mem-desc-line = '21';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a46985844cf35f8356ea4ebdaef1deb2d';
+        sec-mem-ref-line = '17';
+        sec-mem-ref-name = 'board_unexplorecase_remove_front';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        sec-mem-ref-line = '369';
+        sec-mem-ref-name = 'havePathToTreasure';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  cp-fileline  = '18';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'UnexploreCase';
+        node-link = {
+          node-link-id = 'struct_unexplore_case';
+        };
+        node-child = {
+          child-id = '1';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+next
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+file = {
+  file-id   = 'auto_player_8c';
+  file-name = 'autoPlayer.c';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'main';
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/autoPlayer.c';
+      func-mem-desc-line = '11';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The main function of bot.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+It get all information from the server and use it to respond and find the fastest way to solve labirynth.
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/autoPlayer.c';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'auto_player_8h';
+  file-name = 'autoPlayer.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'auto_player_8h_1aeca034f67218340ecb2261a22c2f3dcd';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'BUFSIZE';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+256
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/autoPlayer.h';
+      define-mem-desc-line = '7';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/autoPlayer.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_op_grille_8c';
+  file-name = 'OpGrille.c';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a911f39768d70f6d8105835b40924ded5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'raiseErrorIfOutOfBounds';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'board';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '3';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        func-mem-ref-line = '187';
+        func-mem-ref-name = 'calculate_cout';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a6bba16d6cc684e88c3de5f32255f36c8';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_unexplorecase_push_front';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '8';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a46985844cf35f8356ea4ebdaef1deb2d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+struct UnexploreCase *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_unexplorecase_remove_front';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '17';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a9bdb53849b253d6a2017565777a2a32f';
+        func-mem-ref-line = '27';
+        func-mem-ref-name = 'board_unexplorecase_destroy';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a9bdb53849b253d6a2017565777a2a32f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_unexplorecase_destroy';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '27';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a2847eb2a3cfd81fca5f64ba5c16baf38';
+        func-mem-ref-line = '59';
+        func-mem-ref-name = 'board_destroy';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1abdb404e7f9b67723389f968c053784c3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_create';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'width';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'height';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'xt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'yt';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '35';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a2847eb2a3cfd81fca5f64ba5c16baf38';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_destroy';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '59';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1ad48c1edbb601f4f8a269904a964f86cb';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '65';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a948f9c4d2c97416248c489093e5005e2';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print2';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self2';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '96';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        func-mem-ref-line = '369';
+        func-mem-ref-name = 'havePathToTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1afbf6b5a938e8a86ffcfe7ad0ae3a80b0';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_update';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'status';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '120';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1af05578cadd7370cf7a79fce992b217cc';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'set_heuristique';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'heuristique';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '148';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1ae9da9d144c0851842fe1d2156e6d1e19';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_heuristique';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '152';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1ab35021862023072f6e3894a60a070fa2';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'set_cout';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cout';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '161';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a9981f894015df159a951b2804601d005';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_cout';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '164';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+        func-mem-ref-line = '187';
+        func-mem-ref-name = 'calculate_cout';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1aec0980400927a125b7951a6ea479511f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_type';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '172';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+        func-mem-ref-line = '258';
+        func-mem-ref-name = 'propagateSmoke';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1abf823cf589c880127fff90f4eb34930f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calculate_heuristique';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveY';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '181';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1abdb404e7f9b67723389f968c053784c3';
+        func-mem-ref-line = '35';
+        func-mem-ref-name = 'board_create';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a12111117c1ed356688aa5a636db8de4f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calculate_cout';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'board';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '187';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a26431158fce66fe90a2c6e37447bacda';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'movePlayer';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '211';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'changerLastPositionWithInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '230';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a95e2783122fbfc2fedcc0641f69ce7aa';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_type_smoke';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '250';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        func-mem-ref-line = '369';
+        func-mem-ref-name = 'havePathToTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'propagateSmoke';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'isFirst';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '258';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        func-mem-ref-line = '369';
+        func-mem-ref-name = 'havePathToTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a1c329e45032a797a2b87543a6c765ea5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+struct PossiblePosition *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'PossiblePositionCreate';
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '277';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a04d9ed999d60f1f0b32c5263551a9308';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'PossiblePositionAppdend';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct PossiblePosition *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '284';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1affb0735ec8cbf469cd60a3bba141fe59';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'PossiblePositionDestroy';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct PossiblePosition *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '292';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        func-mem-ref-line = '369';
+        func-mem-ref-name = 'havePathToTreasure';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a1a93b5c3d842c8d7c48591e0e722e0fa';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'PossiblePositionRemoveFront';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct PossiblePosition *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '299';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+        func-mem-ref-line = '307';
+        func-mem-ref-name = 'possiblePositionFromTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1aa70cdf1a73d709b9485bd459802aea54';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+struct PossiblePosition *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'possiblePositionFromTreasure';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '307';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+        func-mem-ref-line = '369';
+        func-mem-ref-name = 'havePathToTreasure';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a3937bae89dbd2abda7c295ce9b203b1c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'havePathToTreasure';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '369';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '423';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8c_1a730020f6279f2717e08fb440c566ec4d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'think';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+      func-mem-desc-line = '423';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.c';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_op_grille_8h';
+  file-name = 'OpGrille.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_8h_1a6a010865b10e541735fa2da8f3cd062d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'abs';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a<0?-a:a)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      define-mem-desc-line = '7';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_8h_1affe776513b24d84b39af8ab0930fef7f';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'max';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-param  = {
+        define-mem-def-name = 'b';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a>=b?a:b)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      define-mem-desc-line = '8';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_8h_1ac6afabdc09a49a433ee19d8a9486056d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'min';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-param  = {
+        define-mem-def-name = 'b';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a<=b?a:b)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      define-mem-desc-line = '9';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_8h_1abb7d8366833727a35f317a710345a64a';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'POURCENTAGE_HUERISTIQUE_DIFFERENTE_PREFERE_CHEMIN_PLUS_PROCHE_X_ET_Y';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+0
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      define-mem-desc-line = '10';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8h_1abdb404e7f9b67723389f968c053784c3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_create';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'width';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'height';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'xt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'yt';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      func-mem-desc-line = '55';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_8h_1a730020f6279f2717e08fb440c566ec4d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'think';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+      func-mem-desc-line = '56';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculate the best move to do with actual board.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
+We made aa smal priority for case wich reduce the longest distance between dx and dy.
+If we find the tresure we calculate the path to return to initial position.
+If we have a path to follow, we use it in priority. It is use to return to entry.
+@param self actual board for the game
+@return string for thr best next direction
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrille.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_op_grille_v2_8c';
+  file-name = 'OpGrilleV2.c';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a911f39768d70f6d8105835b40924ded5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'raiseErrorIfOutOfBounds';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'board';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '3';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1aeb2b6700c251c21d464e05ca562a6e56';
+        func-mem-ref-line = '343';
+        func-mem-ref-name = 'coutCaseToGoBack';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '297';
+        func-mem-ref-name = 'createPath';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1abdb404e7f9b67723389f968c053784c3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_create';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'width';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'height';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'xt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'yt';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '8';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a2847eb2a3cfd81fca5f64ba5c16baf38';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_destroy';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '40';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1ad48c1edbb601f4f8a269904a964f86cb';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '45';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a948f9c4d2c97416248c489093e5005e2';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print2';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self2';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '73';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1afbf6b5a938e8a86ffcfe7ad0ae3a80b0';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_update';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'status';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '97';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1aec0980400927a125b7951a6ea479511f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_type';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '128';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1aeb2b6700c251c21d464e05ca562a6e56';
+        func-mem-ref-line = '343';
+        func-mem-ref-name = 'coutCaseToGoBack';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a63c2e22a8316b0b0ea2fbc9945892667';
+        func-mem-ref-line = '224';
+        func-mem-ref-name = 'heuristique_for_direction';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1ac5388422c3e7797b95cab774c4b782c1';
+        func-mem-ref-line = '393';
+        func-mem-ref-name = 'propagateSmoke';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1abf823cf589c880127fff90f4eb34930f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calculate_heuristique';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveY';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '138';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a26431158fce66fe90a2c6e37447bacda';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'movePlayer';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '144';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1aee868e394992544a2fc638e09622acd0';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'directionWithInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '167';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+        func-mem-ref-line = '187';
+        func-mem-ref-name = 'changerLastPositionWithInt';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'changerLastPositionWithInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '187';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a2eb02f081a6c72f12f43fd09a475982c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'lastPositionToInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '191';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a63c2e22a8316b0b0ea2fbc9945892667';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'heuristique_for_direction';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '224';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Get the best cost from the position to the tresure.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+Calculate all move cost to all cases from the position.
+If we don't have information about the case we use his value in the smokeBoad.
+We return the best value to get the tresure.
+
+@param self the board of the game
+@param posX the position in x for calculate the minimum possible move to reach treasure
+@param posY the position in y for calculate the minimum possible move to reach treasure
+@param alreadyView store cases already visited to avoid infinite loop
+@param smokeBoard list with all unvisited cases with his move cost to tresure
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a5cb78f012808b0614240eff1e971cac7';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'addFrontMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dir';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '257';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '297';
+        func-mem-ref-name = 'createPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a1a74d1001878ab5da4d3f764edcfd207';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'popFrontMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '266';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a09197a0b892e2899fef97bf50648183c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'deleteMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '277';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '297';
+        func-mem-ref-name = 'createPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'createPath';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '297';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Create a path between treasure and exit.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+It use a board already fullfilled and follow cases wich cost the less mouves to return to exit.
+It record each moves in attribute moves in board for use it later.
+
+@param self the board of the game
+@param alreadyView the board filled with mouve cost
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a18c7b20f8093799cf7f533a0e802036f';
+        func-mem-ref-line = '372';
+        func-mem-ref-name = 'calclateReturningPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1aeb2b6700c251c21d464e05ca562a6e56';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'coutCaseToGoBack';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cost';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '343';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Add cost for all cases we discover and put it into a list.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+For every cases add the cost to go to posX and posY with the less moves.
+
+@param self the board of the game
+@param posX the position in x of the case to add a move cost
+@param posY the position in y of the case to add a move cost
+@param cost the cost to add to the case
+@param alreadyView the board to fill with mouve cost
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a18c7b20f8093799cf7f533a0e802036f';
+        func-mem-ref-line = '372';
+        func-mem-ref-name = 'calclateReturningPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a18c7b20f8093799cf7f533a0e802036f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calclateReturningPath';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '372';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculate the best path from treasure to the exit.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+Create a new empty board and fill with move cost every path we disdcover from the exit position.
+Then create a path and put it in the board folling the lowest move cost from the treasure.
+
+@param self the board of the game
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1ac5388422c3e7797b95cab774c4b782c1';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'propagateSmoke';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cost';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '393';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Put in smokeBoard the move cost from each case we don't visit.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+We begin in the fist position and put a 1 move, then for cases around put a cost of 1 more move.
+We do this for all cases not visited and wich are not wall.
+
+@param self the board of the game
+@param smokeBoard the board to fullfill with the cost to the position
+@param x the position in x of the case to add a move cost
+@param y the position in y of the case to add a move cost
+@param cost the cost of the case
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '424';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8c_1a730020f6279f2717e08fb440c566ec4d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'think';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+      func-mem-desc-line = '424';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculate the best move to do with actual board.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
+We made aa smal priority for case wich reduce the longest distance between dx and dy.
+If we find the tresure we calculate the path to return to initial position.
+If we have a path to follow, we use it in priority. It is use to return to entry.
+@param self actual board for the game
+@return string for thr best next direction
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.c';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_op_grille_v2_8h';
+  file-name = 'OpGrilleV2.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_v2_8h_1a6a010865b10e541735fa2da8f3cd062d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'abs';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a<0?-a:a)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      define-mem-desc-line = '7';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_v2_8h_1affe776513b24d84b39af8ab0930fef7f';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'max';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-param  = {
+        define-mem-def-name = 'b';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a>=b?a:b)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      define-mem-desc-line = '8';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = '_op_grille_v2_8h_1ac6afabdc09a49a433ee19d8a9486056d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'min';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-param  = {
+        define-mem-def-name = 'b';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+(a<=b?a:b)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      define-mem-desc-line = '9';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8h_1abdb404e7f9b67723389f968c053784c3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_create';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'width';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'height';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'xt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'yt';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      func-mem-desc-line = '53';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_8h_1a730020f6279f2717e08fb440c566ec4d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'think';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+      func-mem-desc-line = '54';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculate the best move to do with actual board.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
+We made aa smal priority for case wich reduce the longest distance between dx and dy.
+If we find the tresure we calculate the path to return to initial position.
+If we have a path to follow, we use it in priority. It is use to return to entry.
+@param self actual board for the game
+@return string for thr best next direction
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = 'auto_player_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_op_grille_v2_t_8c';
+  file-name = 'OpGrilleV2T.c';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a911f39768d70f6d8105835b40924ded5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'raiseErrorIfOutOfBounds';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'board';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '3';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a2ff0b294f9278df512b34a4b4c70f8db';
+        func-mem-ref-line = '308';
+        func-mem-ref-name = 'coutCaseToGoBack';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '274';
+        func-mem-ref-name = 'createPath';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1abdb404e7f9b67723389f968c053784c3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_create';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'width';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'height';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'xt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'yt';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '8';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a2847eb2a3cfd81fca5f64ba5c16baf38';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_destroy';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '35';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1ad48c1edbb601f4f8a269904a964f86cb';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '40';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a948f9c4d2c97416248c489093e5005e2';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_print2';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self2';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '68';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1afbf6b5a938e8a86ffcfe7ad0ae3a80b0';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'board_update';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'status';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '92';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1aec0980400927a125b7951a6ea479511f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_type';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '123';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a2ff0b294f9278df512b34a4b4c70f8db';
+        func-mem-ref-line = '308';
+        func-mem-ref-name = 'coutCaseToGoBack';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a63c2e22a8316b0b0ea2fbc9945892667';
+        func-mem-ref-line = '210';
+        func-mem-ref-name = 'heuristique_for_direction';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+        func-mem-ref-line = '337';
+        func-mem-ref-name = 'propagateSmoke';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1abf823cf589c880127fff90f4eb34930f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calculate_heuristique';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'arriveY';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '133';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a63c2e22a8316b0b0ea2fbc9945892667';
+        func-mem-ref-line = '210';
+        func-mem-ref-name = 'heuristique_for_direction';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a6f5da9ac106aaa336af740f041c3f1f8';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calculate_heuristique_with_wall';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'departY';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '139';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a26431158fce66fe90a2c6e37447bacda';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'movePlayer';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '145';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1aee868e394992544a2fc638e09622acd0';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'directionWithInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '164';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+        func-mem-ref-line = '184';
+        func-mem-ref-name = 'changerLastPositionWithInt';
+    };
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1af26fb440edc01ca6c3f9126bf4b08e27';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'changerLastPositionWithInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '184';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a2eb02f081a6c72f12f43fd09a475982c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'lastPositionToInt';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '188';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a63c2e22a8316b0b0ea2fbc9945892667';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'heuristique_for_direction';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '210';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a5cb78f012808b0614240eff1e971cac7';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'addFrontMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dir';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '243';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '274';
+        func-mem-ref-name = 'createPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a1a74d1001878ab5da4d3f764edcfd207';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'popFrontMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '252';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a09197a0b892e2899fef97bf50648183c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'deleteMoves';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '263';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+        func-mem-ref-line = '274';
+        func-mem-ref-name = 'createPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a1673c22cdbee1fa7ddbb61f175dce998';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'createPath';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '274';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a18c7b20f8093799cf7f533a0e802036f';
+        func-mem-ref-line = '329';
+        func-mem-ref-name = 'calclateReturningPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a2ff0b294f9278df512b34a4b4c70f8db';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'coutCaseToGoBack';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posX';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'posY';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cost';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alreadyView';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '308';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a18c7b20f8093799cf7f533a0e802036f';
+        func-mem-ref-line = '329';
+        func-mem-ref-name = 'calclateReturningPath';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a18c7b20f8093799cf7f533a0e802036f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'calclateReturningPath';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '329';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a94bc9e5253b577d5668c6d4899c8d75a';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'propagateSmoke';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'smokeBoard';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'x';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'y';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'isFirst';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '337';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referencedby = {
+        func-mem-ref-id = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+        func-mem-ref-line = '359';
+        func-mem-ref-name = 'think';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = '_op_grille_v2_t_8c_1a730020f6279f2717e08fb440c566ec4d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'think';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+struct Board *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'self';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+      func-mem-desc-line = '359';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculate the best move to do with actual board.
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+If we search tresure we calculate the minimum cost of each case arround and then we go to the minimum.
+We made aa smal priority for case wich reduce the longest distance between dx and dy.
+If we find the tresure we calculate the path to return to initial position.
+If we have a path to follow, we use it in priority. It is use to return to entry.
+@param self actual board for the game
+@return string for thr best next direction
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/OpGrilleV2T.c';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_r_e_a_d_m_e_8md';
+  file-name = 'README.md';
+  file-full-name  = '/home/alphee/Documents/Cours informatique l2 annee 2021/Semestre 1/Algoritme et structure de données/projet2/README.md';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */

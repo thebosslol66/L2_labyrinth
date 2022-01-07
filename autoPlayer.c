@@ -2,6 +2,12 @@
 
 #include "OpGrilleV2.h"
 
+/**
+ * @brief The main function of bot
+ *
+ * It get all information from the server and use it to respond and find the fastest way to solve labirynth.
+ *
+**/
 int main() {
     srand(time(NULL));
     setbuf(stdout, NULL);

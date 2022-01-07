@@ -1,6 +1,6 @@
 #!/bin/bash
 
-seed=("4137502622" "357668081" "658417210" "3103433381" "1938583126" "2581622833" "2813222724" "1902999301" "677638891" "2424358276" "1530873975")
+#seed=("4137502622" "357668081" "658417210" "3103433381" "1938583126" "2581622833" "2813222724" "1902999301" "677638891" "2424358276" "1530873975")
 firstCount=0
 secondCount=0
 
@@ -62,6 +62,18 @@ do
 	rm out.txt
 	cp=$(($cp-1))
 done
+
+cp=200
+
+while [ "$cp" != 0 ]
+do 
+	echo -en "\rTest restants: ${cp} ./labyrinth-server ${2} ${1}"
+	./labyrinth-server $1 $2 >> /dev/null 2>> out.txt
+	check_output
+	rm out.txt
+	cp=$(($cp-1))
+done
+
 echo ""
 echo "${1} algo win ${firstCount} times"
 echo "${2} algo win ${secondCount} times"
