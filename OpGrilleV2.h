@@ -8,6 +8,8 @@
 #define max(a,b)(a>=b?a:b)
 #define min(a,b)(a<=b?a:b)
 
+
+
 struct Case {
     char type; // ' ' = vide
     int hasVisited;
@@ -51,4 +53,6 @@ struct Board {
 };
 
 void board_create(struct Board *self, int width, int height, int x, int y, int xt, int yt);
+void board_update(struct Board *self, char *status);
+void board_destroy(struct Board *self);
 char * think(struct Board * self);
