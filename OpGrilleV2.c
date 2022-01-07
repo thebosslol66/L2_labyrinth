@@ -342,7 +342,7 @@ void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, co
     {
         return;
     }
-    if (smokeBoard[x+y*self->width] == 1){
+    if (smokeBoard[x+y*self->width] <= cost && smokeBoard[x+y*self->width] != 0){
         return;
     }
     if (get_type(self, x, y) == 'W'){
@@ -351,13 +351,11 @@ void propagateSmoke(const struct Board * self, int * smokeBoard, const int x, co
     if (self->data[x+(y*self->width)].hasVisited == 1){
         return ;
     }
-    if (smokeBoard[x+y*self->width] > cost || smokeBoard[x+y*self->width] == 0){
-        smokeBoard[x+y*self->width] = cost;
-        propagateSmoke(self, smokeBoard, x+1, y, cost+1, 0);
-        propagateSmoke(self, smokeBoard, x-1, y, cost+1, 0);
-        propagateSmoke(self, smokeBoard, x, y+1, cost+1, 0);
-        propagateSmoke(self, smokeBoard, x, y-1, cost+1, 0);
-    }
+    smokeBoard[x+y*self->width] = cost;
+    propagateSmoke(self, smokeBoard, x+1, y, cost+1, 0);
+    propagateSmoke(self, smokeBoard, x-1, y, cost+1, 0);
+    propagateSmoke(self, smokeBoard, x, y+1, cost+1, 0);
+    propagateSmoke(self, smokeBoard, x, y-1, cost+1, 0);
 }
 
 char * think(struct Board * self){
@@ -374,7 +372,7 @@ char * think(struct Board * self){
         return self->player->lastInstruction;
     }
     fprintf(stderr, "No more moves, preparing new moves.\n");
-    board_print(self);
+    //board_print(self);
     //evaluer toutes les cases autours
     int minHeuristique = 1000000;
     int numberMinDir = 0;
@@ -388,7 +386,7 @@ char * think(struct Board * self){
     //verifier si autour du trésor c'est libre sinon allez a la case vide la plus proche ou avant un cout positif
     propagateSmoke(self, smokeBoard, self->tresorX, self->tresorY, 1, 1);
 
-    board_print2(self, smokeBoard);
+    //board_print2(self, smokeBoard);
 
     int dx = self->tresorX - x;
     int dy = self->tresorY - y;
