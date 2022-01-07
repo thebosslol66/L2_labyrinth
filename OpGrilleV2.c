@@ -141,135 +141,6 @@ int calculate_heuristique(const int departX, const int departY, const int arrive
     return abs(dx) + abs(dy);
 }
 
-bool is_there_wall_recto(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    if (arriveX > departX)
-    {
-        for (int i = departX; i < arriveX; i++)
-        {
-            if(get_type(self, i, departY) == 'W')
-            {
-                return true;
-            }
-        }
-    }else
-    {
-        for (int i = departX; i > arriveX; i--)
-        {
-            if(get_type(self, i, departY) == 'W')
-            {
-                return true;
-            }
-        }
-    }
-
-    if (arriveY > departY)
-    {
-        for (int i = departY; i < arriveY; i++)
-        {
-            if(get_type(self, arriveX, i) == 'W')
-            {
-                return true;
-            }
-        }
-    }else
-    {
-        for (int i = departY; i > arriveY; i--)
-        {
-            if(get_type(self, arriveX, i) == 'W')
-            {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-bool is_there_wall_verso(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    if (arriveY > departY)
-    {
-        for (int i = departY; i < arriveY; i++)
-        {
-            if(get_type(self, departX, i) == 'W')
-            {
-                return true;
-            }
-        }
-    }else
-    {
-        for (int i = departY; i > arriveY; i--)
-        {
-            if(get_type(self, departX, i) == 'W')
-            {
-                return true;
-            }
-        }
-    }
-
-    if (arriveX > departX)
-    {
-        for (int i = departX; i < arriveX; i++)
-        {
-            if(get_type(self, i, arriveY) == 'W')
-            {
-                return true;
-            }
-        }
-    }else
-    {
-        for (int i = departX; i > arriveX; i--)
-        {
-            if(get_type(self, i, arriveY) == 'W')
-            {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-int partial_calculate_heuristique_with_wall(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    bool isWallRecto = is_there_wall_recto(self, departX, departY, arriveX, arriveY);
-    bool isWallVerso = is_there_wall_verso(self, departX, departY, arriveX, arriveY);
-    if (!isWallRecto || !isWallVerso)
-    {
-        return calculate_heuristique(departX, departY, arriveX, arriveY);
-    }
-    return 1000000;
-}
-
-int calculate_heuristique_with_wall(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    int heuristique = partial_calculate_heuristique_with_wall(self, departX, departY, arriveX, arriveY);
-    if (heuristique != 1000000)
-    {
-        return heuristique;
-    }
-    
-    int dx = self->tresorX - departX;
-    int dy = self->tresorY - departY;
-    if ((dx > 0 && dy > 0) || (dx < 0 && dy < 0))
-    {
-        if (self->xmax > self->width || self->ymin < 0)
-        {
-            return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymax, arriveX, arriveY);
-        }
-        if (self->xmin < 0 || self->ymax > self->height)
-        {
-            return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymin, arriveX, arriveY);
-        }
-        return min(partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymin, arriveX, arriveY), partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymax, arriveX, arriveY));
-    }
-    if (self->xmax > self->width ||  self->ymax > self->height)
-    {
-        return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymin, arriveX, arriveY);
-    }
-    if (self->xmin < 0 || self->ymin < 0)
-    {
-        return partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymax, arriveX, arriveY);
-    }
-    return min(partial_calculate_heuristique_with_wall(self, departX, departY, self->xmax, self->ymax) + partial_calculate_heuristique_with_wall(self, self->xmax, self->ymax, arriveX, arriveY), partial_calculate_heuristique_with_wall(self, departX, departY, self->xmin, self->ymin) + partial_calculate_heuristique_with_wall(self, self->xmin, self->ymin, arriveX, arriveY));
-}
-
-
 void movePlayer(struct Board * self){
     switch(self->player->lastInstruction[0]){
             case 'N':{
@@ -355,7 +226,7 @@ int heuristique_for_direction(struct Board * self, int posX, int posY, int * alr
                 if (smokeBoard[(posX+i)+(posY+j)*self->width] == 0){
                     continue;
                 }
-                int k = calculate_heuristique_with_wall(self, posX+i, posY+j, self->tresorX, self->tresorY);
+                int k = smokeBoard[(posX+i)+(posY+j)*self->width]-1;
                 minHeuristique = min(minHeuristique, k);
             }
             else if (typeCase == 'T'){
