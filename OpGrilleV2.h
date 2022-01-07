@@ -9,12 +9,21 @@
 #define min(a,b)(a<=b?a:b)
 
 
-
+/**
+ * @struct Case
+ * @param type contain the type of the case of the board
+ * @param hasVisited say if the case has been visit (0 for no and 1 fir yess)
+ */
 struct Case {
     char type; // ' ' = vide
     int hasVisited;
 };
 
+/**
+ * @struct Case
+ * @param type contain the type of the case of the board
+ * @param hasVisited say if the case has been visit (0 for no and 1 fir yess)
+ */
 struct Player {
     int x;
     int y;
