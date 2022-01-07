@@ -137,26 +137,24 @@ int calculate_heuristique(const int departX, const int departY, const int arrive
     return abs(dx) + abs(dy);
 }
 
-void is_there_wall_recto(const struct Board *self, int departX, int departY, int arriveX, int arriveY, bool isWall) {
+bool is_there_wall_recto(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
     int dx = self->tresorX - departX;
     if (dx > 0)
     {
         for (int i = departX; i < dx; i++)
         {
-            if(strcmp(self->data[i + (departY*self->width)].type, "W"))
+            if(self->data[i + (departY*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }else
     {
         for (int i = departX; i > dx; i--)
         {
-            if(strcmp(self->data[i + (departY*self->width)].type, "W"))
+            if(self->data[i + (departY*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }
@@ -166,45 +164,42 @@ void is_there_wall_recto(const struct Board *self, int departX, int departY, int
     {
         for (int i = departY; i < dy; i++)
         {
-            if(strcmp(self->data[(departX + dx) + (i*self->width)].type, "W"))
+            if(self->data[(departX + dx) + (i*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }else
     {
         for (int i = departX; i > dy; i--)
         {
-            if(strcmp(self->data[(departX + dx) + (i*self->width)].type, "W"))
+            if(self->data[(departX + dx) + (i*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }
+    return false;
 }
 
-void is_there_wall_verso(const struct Board *self, int departX, int departY, int arriveX, int arriveY, bool isWall) {
+bool is_there_wall_verso(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
     int dy = self->tresorY - departY;
     if (dy > 0)
     {
         for (int i = departY; i < dy; i++)
         {
-            if(strcmp(self->data[departX + (i*self->width)].type, "W"))
+            if(self->data[departX + (i*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return = true;
             }
         }
     }else
     {
         for (int i = departX; i > dy; i--)
         {
-            if(strcmp(self->data[departX + (i*self->width)].type, "W"))
+            if(self->data[departX + (i*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }
@@ -214,30 +209,27 @@ void is_there_wall_verso(const struct Board *self, int departX, int departY, int
     {
         for (int i = departX; i < dx; i++)
         {
-            if(strcmp(self->data[i + ((departY + dy)*self->width)].type, "W"))
+            if(self->data[i + ((departY + dy)*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }else
     {
         for (int i = departX; i > dx; i--)
         {
-            if(strcmp(self->data[i + ((departY + dy)*self->width)].type, "W"))
+            if(self->data[i + ((departY + dy)*self->width)].type == 'W')
             {
-                isWall = true;
-                break;
+                return true;
             }
         }
     }
+    return false;
 }
 
 int partial_calculate_heuristique_with_wall(const struct Board *self, int departX, int departY, int arriveX, int arriveY) {
-    bool isWallRecto = false;
-    bool isWallVerso = false;
-    is_there_wall_recto(self, departX, departY, arriveX, arriveY, isWallRecto);
-    is_there_wall_verso(self, departX, departY, arriveX, arriveY, isWallVerso);
+    bool isWallRecto = is_there_wall_recto(self, departX, departY, arriveX, arriveY);
+    bool isWallVerso = is_there_wall_verso(self, departX, departY, arriveX, arriveY);
     if (!isWallRecto || !isWallVerso)
     {
         return calculate_heuristique(departX, departY, arriveX, arriveY);
@@ -545,7 +537,6 @@ char * think(struct Board * self){
         }
     }
     free(alreadyView);
-    free(smokeBoard);
     if (lastPositionToInt(self) == numberMinDir){
         self->nbMoveInSameDirection++;
     }
