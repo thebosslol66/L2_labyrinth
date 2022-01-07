@@ -10,7 +10,6 @@
 
 struct Case {
     char type; // ' ' = vide
-    int hasVisited;
 };
 
 struct Player {
@@ -31,6 +30,12 @@ struct Board {
     struct Moves * moves;
     int movesRemaining;
     int nbMoveInSameDirection;
+
+    // points calcul heuristique
+    int xmin;
+    int xmax;
+    int ymin;
+    int ymax;
 
     int step;
 
