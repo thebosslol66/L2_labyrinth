@@ -139,7 +139,6 @@ int calculate_heuristique(const int departX, const int departY, const int arrive
 int calculate_heuristique_with_wall(const struct Board *self, int departX, int departY){
 
 }
-//faire fonctrion pour recalculer le cout de toutes les cases seulement quand trésor trouvé
 
 
 void movePlayer(struct Board * self){
@@ -424,6 +423,7 @@ char * think(struct Board * self){
         }
     }
     free(alreadyView);
+    free(smokeBoard);
     if (lastPositionToInt(self) == numberMinDir){
         self->nbMoveInSameDirection++;
     }
